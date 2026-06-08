@@ -1,12 +1,12 @@
 /* ─── Category colors ──────────────────────────────────────────── */
 var CAT_COLORS = {
-  'open-source':       { strong: '#047857', soft: '#ECFDF5' },
-  'closed':            { strong: '#4338CA', soft: '#EEF0FF' },
-  'openclaw-eco':      { strong: '#B45309', soft: '#FEF3C7' },
-  'runners-paralelos': { strong: '#1D4ED8', soft: '#EFF6FF' },
-  'swarms':            { strong: '#6D28D9', soft: '#F5F3FF' },
-  'loops-autonomos':   { strong: '#BE123C', soft: '#FFF1F2' },
-  'asistentes':        { strong: '#0F766E', soft: '#F0FDFA' }
+  'open-source':       { strong: '#10B981', soft: '#052014' },
+  'closed':            { strong: '#818CF8', soft: '#1A1840' },
+  'openclaw-eco':      { strong: '#FBBF24', soft: '#1C1400' },
+  'runners-paralelos': { strong: '#60A5FA', soft: '#08152A' },
+  'swarms':            { strong: '#A78BFA', soft: '#1A1030' },
+  'loops-autonomos':   { strong: '#F87171', soft: '#200C0C' },
+  'asistentes':        { strong: '#34D399', soft: '#062518' }
 };
 
 /* ─── Helpers ──────────────────────────────────────────────────── */
@@ -27,7 +27,7 @@ function renderInline(s) {
   if (!s) return '';
   var escaped = esc(s);
   return escaped.replace(/`([^`]+)`/g,
-    '<code class="bg-[#F1F5F9] text-ink px-1.5 py-0.5 rounded text-[0.85em] font-mono">$1</code>');
+    '<code class="bg-[#1C1C2E] text-ink px-1.5 py-0.5 rounded text-[0.85em] font-mono">$1</code>');
 }
 
 /* ─── Data merge (v2 + v3) ─────────────────────────────────────── */
@@ -105,7 +105,7 @@ function _trapFocus(e) {
 
 /* ─── Tool modal ───────────────────────────────────────────────── */
 function fillModal(tool) {
-  var cat = CAT_COLORS[tool.category] || { strong: '#4338CA', soft: '#EEF0FF' };
+  var cat = CAT_COLORS[tool.category] || { strong: '#818CF8', soft: '#1E1B4B' };
   var panel = document.getElementById('modalPanel');
   if (!panel) return;
   panel.style.setProperty('--cat', cat.strong);
@@ -123,7 +123,7 @@ function fillModal(tool) {
   var prosList  = document.getElementById('modalPros');
   if (tool.pros && tool.pros.length) {
     prosList.innerHTML = tool.pros.map(function(p) {
-      return '<li class="flex gap-2 items-start"><span class="text-[#047857] flex-shrink-0 mt-0.5">✓</span><span>' + esc(p) + '</span></li>';
+      return '<li class="flex gap-2 items-start"><span class="text-[#10B981] flex-shrink-0 mt-0.5">✓</span><span>' + esc(p) + '</span></li>';
     }).join('');
     prosBlock.style.display = '';
   } else { prosBlock.style.display = 'none'; }
@@ -132,7 +132,7 @@ function fillModal(tool) {
   var contrasList  = document.getElementById('modalContras');
   if (tool.contras && tool.contras.length) {
     contrasList.innerHTML = tool.contras.map(function(c) {
-      return '<li class="flex gap-2 items-start"><span class="text-[#B91C1C] flex-shrink-0 mt-0.5">✗</span><span>' + esc(c) + '</span></li>';
+      return '<li class="flex gap-2 items-start"><span class="text-[#F87171] flex-shrink-0 mt-0.5">✗</span><span>' + esc(c) + '</span></li>';
     }).join('');
     contrasBlock.style.display = '';
   } else { contrasBlock.style.display = 'none'; }
@@ -306,7 +306,7 @@ function renderCards(items, containerId) {
   if (!container) return;
 
   var html = items.map(function(tool) {
-    var cat = CAT_COLORS[tool.category] || { strong: '#4338CA', soft: '#EEF0FF' };
+    var cat = CAT_COLORS[tool.category] || { strong: '#818CF8', soft: '#1E1B4B' };
     var label = (window.GUIA_LABELS && GUIA_LABELS[tool.category]) || tool.category || '';
     var stars = tool.stars > 0
       ? '<span class="flex items-center gap-1 text-muted text-xs"><span class="text-amber-400">★</span>' + fmtStars(tool.stars) + '</span>'
@@ -349,7 +349,7 @@ function renderMiniCards(names, containerId) {
   var html = names.map(function(name) {
     var tool = findTool(name);
     if (!tool) return '';
-    var cat = CAT_COLORS[tool.category] || { strong: '#4338CA', soft: '#EEF0FF' };
+    var cat = CAT_COLORS[tool.category] || { strong: '#818CF8', soft: '#1E1B4B' };
     var label = (window.GUIA_LABELS && GUIA_LABELS[tool.category]) || tool.category || '';
     return '<button class="mini-card" data-tool="' + esc(tool.name) + '"' +
       ' style="--cat:' + cat.strong + '; --cat-soft:' + cat.soft + '">' +

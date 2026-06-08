@@ -4,7 +4,7 @@ Esta guía es un sitio estático puro: HTML + CSS + JavaScript. No hay pasos de 
 
 ---
 
-## Estado actual — v3 publicada (8 jun 2026)
+## Estado actual — v4 publicada (8 jun 2026)
 
 **Sitio en producción:** https://srd836.github.io/web-guia/
 
@@ -18,7 +18,7 @@ Esta guía es un sitio estático puro: HTML + CSS + JavaScript. No hay pasos de 
 | `.nojekyll` | ✅ En raíz del proyecto |
 | GitHub Pages | ✅ Activo — se redespliega en cada push a `main` |
 
-### Páginas incluidas en v3
+### Páginas incluidas en v4
 
 1. `index.html` — Inicio / portada
 2. `concepto.html` — ¿Qué es un agente IA?

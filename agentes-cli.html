@@ -12,10 +12,10 @@
   <script>
   tailwind.config = {
     theme: { extend: {
-      colors: { paper:'#FAFAF7', surface:'#FFFFFF', ink:'#16161A', muted:'#6B6B73', line:'#E6E5DF', brand:'#4338CA', 'brand-soft':'#EEF0FF' },
+      colors: { paper:'#080810', surface:'#0F0F1C', ink:'#E8E6FF', muted:'#8888B4', line:'#1C1C2E', brand:'#818CF8', 'brand-soft':'#1E1B4B' },
       fontFamily: { display:['Fraunces','serif'], body:['Inter','sans-serif'] },
-      boxShadow: { 'elev-1':'0 1px 2px rgba(22,22,26,.06)', 'elev-2':'0 4px 12px rgba(22,22,26,.08)', 'elev-3':'0 12px 28px rgba(22,22,26,.12)', 'elev-4':'0 24px 60px rgba(22,22,26,.18)' },
-      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#EEF0FF 0%,#F5F3FF 50%,#ECFDF5 100%)' },
+      boxShadow: { 'elev-1':'0 1px 3px rgba(0,0,0,.5)', 'elev-2':'0 4px 12px rgba(0,0,0,.6)', 'elev-3':'0 12px 28px rgba(0,0,0,.7)', 'elev-4':'0 24px 60px rgba(0,0,0,.8)' },
+      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#080810 0%,#0C0A18 50%,#080C14 100%)' },
       screens: { sm:'360px', md:'768px', xl:'1280px' },
       maxWidth: { content:'1152px' },
     }},
@@ -102,17 +102,37 @@
 </div>
 
 <!-- HERO -->
-<section class="py-16 md:py-20 bg-grad-hero relative overflow-hidden">
+<section class="py-16 md:py-20 bg-grad-hero hero-aurora relative overflow-hidden">
   <div class="hero-grid absolute inset-0 opacity-40" aria-hidden="true"></div>
   <div class="max-w-content mx-auto px-4 sm:px-6 relative">
-    <div class="max-w-2xl reveal-target">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 text-[#047857] text-sm font-semibold mb-4 border border-[#047857]/20 backdrop-blur-sm">16 herramientas</div>
-      <h1 class="font-display text-4xl md:text-5xl font-black text-ink mb-4 leading-tight">
-        Agentes de código <span class="text-gradient">CLI</span>
-      </h1>
-      <p class="text-lg text-muted leading-relaxed">
-        Un agente de código CLI es un programa que corre en tu terminal y usa inteligencia artificial para entender y modificar código. Filtra por categoría y abre cualquier tarjeta para ver detalles completos, precios y cómo empezar.
-      </p>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal-target">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface/40 text-[#10B981] text-sm font-semibold mb-4 border border-[#10B981]/30 backdrop-blur-sm">16 herramientas</div>
+        <h1 class="font-display text-4xl md:text-5xl font-black text-ink mb-4 leading-tight">
+          Agentes de código <span class="text-gradient">CLI</span>
+        </h1>
+        <p class="text-lg text-muted leading-relaxed">
+          Un agente de código CLI es un programa que corre en tu terminal y usa inteligencia artificial para entender y modificar código. Filtra por categoría y abre cualquier tarjeta para ver detalles completos, precios y cómo empezar.
+        </p>
+      </div>
+      <div class="hidden md:block reveal-target" aria-hidden="true">
+        <div class="terminal shadow-elev-3">
+          <div class="terminal-chrome">
+            <span class="terminal-dot" style="background:#FF5F57"></span>
+            <span class="terminal-dot" style="background:#FEBC2E"></span>
+            <span class="terminal-dot" style="background:#28C840"></span>
+            <span class="ml-auto text-[11px] text-white/30 font-mono">~/proyecto</span>
+          </div>
+          <div class="p-4 font-mono text-xs leading-relaxed">
+            <div class="terminal-line terminal-line-1 flex gap-2"><span class="text-[#818CF8]">$</span><span class="text-white/90">claude fix "TypeError line 42"</span></div>
+            <div class="terminal-line terminal-line-2 mt-1.5 text-[#10B981]">✓ Leyendo stack trace…</div>
+            <div class="terminal-line terminal-line-3 text-[#10B981]">✓ src/api/handler.ts encontrado</div>
+            <div class="terminal-line terminal-line-4 mt-1.5 text-white/70">Aplicando corrección…</div>
+            <div class="terminal-line terminal-line-5 mt-1.5"><span class="text-[#FBBF24]">→</span><span class="text-white/90 ml-2">Bug resuelto · 1 archivo modificado</span></div>
+            <div class="terminal-line terminal-line-6 mt-2 flex gap-2"><span class="text-[#818CF8]">$</span><span class="cursor-blink text-white/70">▌</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -131,8 +151,8 @@
   <div class="max-w-content mx-auto px-4 sm:px-6">
     <div id="cliPills" class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filtrar por categoría">
       <button data-filter="todos" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-brand text-white border-brand shadow-sm">Todos</button>
-      <button data-filter="open-source" style="--cat:#047857;--cat-soft:#ECFDF5" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Código abierto</button>
-      <button data-filter="closed" style="--cat:#4338CA;--cat-soft:#EEF0FF" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Cerrado / comercial</button>
+      <button data-filter="open-source" style="--cat:#10B981;--cat-soft:#052014" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Código abierto</button>
+      <button data-filter="closed" style="--cat:#818CF8;--cat-soft:#1A1840" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Cerrado / comercial</button>
     </div>
     <div id="cliGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
     <p id="cliEmpty" class="hidden text-center text-muted py-16">No hay herramientas en esta categoría.</p>
@@ -177,12 +197,12 @@
       </div>
       <div class="mb-5"><span id="modalCatChip" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold"></span></div>
       <p id="modalLongDesc" class="text-ink/80 text-sm leading-relaxed mb-6"></p>
-      <div id="modalProsBlock" class="bg-[#ECFDF5] rounded-xl p-4 mb-4">
-        <h3 class="text-xs font-semibold text-[#047857] uppercase tracking-wide mb-3">Ventajas</h3>
+      <div id="modalProsBlock" class="bg-[#052014] rounded-xl p-4 mb-4">
+        <h3 class="text-xs font-semibold text-[#10B981] uppercase tracking-wide mb-3">Ventajas</h3>
         <ul id="modalPros" class="space-y-2 text-sm text-ink/80"></ul>
       </div>
-      <div id="modalContrasBlock" class="bg-[#FFF1F2] rounded-xl p-4 mb-6">
-        <h3 class="text-xs font-semibold text-[#BE123C] uppercase tracking-wide mb-3">Limitaciones</h3>
+      <div id="modalContrasBlock" class="bg-[#200C0C] rounded-xl p-4 mb-6">
+        <h3 class="text-xs font-semibold text-[#F87171] uppercase tracking-wide mb-3">Limitaciones</h3>
         <ul id="modalContras" class="space-y-2 text-sm text-ink/80"></ul>
       </div>
       <div class="mb-4">
