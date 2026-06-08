@@ -4,7 +4,7 @@ body { overflow-x: hidden; }
 
 /* focus-visible ring */
 :focus-visible {
-  outline: 2px solid #818CF8;
+  outline: 2px solid #F97316;
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -33,9 +33,9 @@ body { overflow-x: hidden; }
 /* ─── Hero aurora (dark gradient blobs) ──────────── */
 .hero-aurora {
   background:
-    radial-gradient(ellipse 70% 55% at 15% 60%, rgba(129,140,248,.13) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 70% at 85% 25%, rgba(167,139,250,.09) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 35% at 55% 85%, rgba(16,185,129,.06) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 55% at 15% 60%, rgba(249,115,22,.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 85% 25%, rgba(37,99,235,.09) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 35% at 55% 85%, rgba(251,146,60,.06) 0%, transparent 70%);
 }
 
 /* ─── Hero dot grid ───────────────────────── */
@@ -46,7 +46,7 @@ body { overflow-x: hidden; }
 
 /* ─── Gradient text ───────────────────────── */
 .text-gradient {
-  background: linear-gradient(130deg, #818CF8 0%, #A78BFA 100%);
+  background: linear-gradient(130deg, #F97316 0%, #FB923C 50%, #2563EB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -90,8 +90,8 @@ body { overflow-x: hidden; }
 /* ─── Scrollbar ───────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #1C1C2E; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #2E2E4A; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
 
 /* ─── Code blocks ─────────────────────────── */
 .code-dark {
@@ -108,36 +108,36 @@ body { overflow-x: hidden; }
 /* Card color bar */
 .card-bar {
   position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background-color: var(--cat, #818CF8);
+  background-color: var(--cat, #F97316);
   border-radius: 12px 12px 0 0;
 }
 
 /* Category chip */
 .chip-cat {
-  background-color: var(--cat-soft, #1E1B4B);
-  color: var(--cat, #818CF8);
+  background-color: var(--cat-soft, #431407);
+  color: var(--cat, #F97316);
 }
 
 /* Card hover accent */
 .tool-card:hover {
-  border-color: var(--cat, #818CF8) !important;
-  box-shadow: 0 0 0 1px var(--cat, #818CF8), 0 12px 28px rgba(0,0,0,.7) !important;
+  border-color: var(--cat, #F97316) !important;
+  box-shadow: 0 0 0 1px var(--cat, #F97316), 0 12px 28px rgba(0,0,0,.7) !important;
 }
-.tool-card:hover h3 { color: var(--cat, #818CF8); }
+.tool-card:hover h3 { color: var(--cat, #F97316); }
 
 /* Active filter pill (category) */
 .cat-pill-active {
-  background-color: var(--cat-soft, #1E1B4B);
-  color: var(--cat, #818CF8);
-  border-color: var(--cat, #818CF8);
+  background-color: var(--cat-soft, #431407);
+  color: var(--cat, #F97316);
+  border-color: var(--cat, #F97316);
   box-shadow: 0 1px 2px rgba(0,0,0,.4);
 }
 
 /* Nav active link */
 .nav-active {
-  color: #E8E6FF !important;
+  color: #F8FAFC !important;
   font-weight: 600 !important;
-  background-color: #1E1B4B !important;
+  background-color: #431407 !important;
 }
 
 /* Body scroll lock (modal open) */
@@ -159,7 +159,7 @@ body.modal-open { overflow: hidden; }
   position: absolute;
   left: 1.25rem; top: 2.75rem; bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #818CF8 0%, #1C1C2E 100%);
+  background: linear-gradient(180deg, #F97316 0%, #334155 100%);
 }
 .step-rail:last-child { padding-bottom: 0; }
 .step-rail:last-child::before { display: none; }
@@ -169,23 +169,23 @@ body.modal-open { overflow: hidden; }
   .comp-table thead { display: none; }
   .comp-table tbody tr {
     display: flex; flex-direction: column;
-    border: 1px solid #1C1C2E; border-radius: 14px;
+    border: 1px solid #334155; border-radius: 14px;
     margin-bottom: 0.75rem; padding: 1rem;
-    background: #0F0F1C;
+    background: #1E293B;
   }
   .comp-table tbody td { border: none; padding: 2px 0; font-size: 0.8125rem; }
   .comp-table tbody td[data-label]::before {
     content: attr(data-label) ': ';
-    display: block; font-weight: 600; color: #8888B4;
+    display: block; font-weight: 600; color: #94A3B8;
     font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.04em;
   }
 }
 
 /* ─── Mini tool card (casos-uso / ruta) ────── */
 .mini-card {
-  background: #0F0F1C;
-  border: 1px solid #1C1C2E;
-  border-top: 3px solid var(--cat, #818CF8);
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-top: 3px solid var(--cat, #F97316);
   border-radius: 14px;
   padding: 1rem;
   cursor: pointer; text-align: left; width: 100%;

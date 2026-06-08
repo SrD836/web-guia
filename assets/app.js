@@ -321,7 +321,7 @@ function renderCards(items, containerId) {
       ' style="--cat:' + cat.strong + '; --cat-soft:' + cat.soft + '">' +
       '<div class="card-bar" aria-hidden="true"></div>' +
       '<div class="flex items-start justify-between gap-3">' +
-        '<p class="font-display text-lg font-semibold text-ink leading-snug transition-colors">' + esc(tool.name) + '</p>' +
+        '<p class="font-display text-lg font-semibold text-ink leading-snug transition-colors min-w-0">' + esc(tool.name) + '</p>' +
         badge +
       '</div>' +
       '<span class="chip-cat inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold self-start">' + esc(label) + '</span>' +

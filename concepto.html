@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -7,15 +7,15 @@
   <meta name="description" content="¿Qué es un agente de código CLI y por qué está cambiando la ingeniería de software? Artículo completo con ejemplos, comparativas y guía para elegir la herramienta adecuada.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
   tailwind.config = {
     theme: { extend: {
-      colors: { paper:'#080810', surface:'#0F0F1C', ink:'#E8E6FF', muted:'#8888B4', line:'#1C1C2E', brand:'#818CF8', 'brand-soft':'#1E1B4B' },
-      fontFamily: { display:['Fraunces','serif'], body:['Inter','sans-serif'] },
+      colors: { paper:'#0F172A', surface:'#1E293B', ink:'#F8FAFC', muted:'#94A3B8', line:'#334155', brand:'#F97316', 'brand-soft':'#431407' },
+      fontFamily: { display:['JetBrains Mono','monospace'], body:['IBM Plex Sans','sans-serif'] },
       boxShadow: { 'elev-1':'0 1px 3px rgba(0,0,0,.5)', 'elev-2':'0 4px 12px rgba(0,0,0,.6)', 'elev-3':'0 12px 28px rgba(0,0,0,.7)', 'elev-4':'0 24px 60px rgba(0,0,0,.8)' },
-      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#080810 0%,#0C0A18 50%,#080C14 100%)' },
+      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#0F172A 0%,#1A0B04 40%,#0A1020 80%,#0F172A 100%)' },
       screens: { sm:'360px', md:'768px', xl:'1280px' },
       maxWidth: { content:'1152px' },
     }},
@@ -23,13 +23,13 @@
   </script>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    .article-h2 { font-family:'Fraunces',serif; font-size:1.375rem; font-weight:700; color:#E8E6FF; margin-bottom:0.875rem; margin-top:2.5rem; scroll-margin-top:6rem; }
-    .article-p { color:#E8E6FF; line-height:1.85; margin-bottom:1.125rem; }
-    .article-li { position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#E8E6FF; line-height:1.75; }
-    .article-li::before { content:'→'; position:absolute; left:0; color:#818CF8; font-weight:700; }
-    .article-code { background:#1E1B4B; color:#818CF8; padding:0.1em 0.4em; border-radius:0.3em; font-size:0.875rem; font-family:ui-monospace,'Cascadia Code',monospace; }
-    .toc-link { display:block; padding:0.3rem 0.75rem; font-size:0.8125rem; color:#8888B4; border-left:2px solid #1C1C2E; line-height:1.5; transition:all 150ms; }
-    .toc-link:hover, .toc-link.active { color:#818CF8; border-left-color:#818CF8; }
+    .article-h2 { font-family:'JetBrains Mono',monospace; font-size:1.375rem; font-weight:700; color:#F8FAFC; margin-bottom:0.875rem; margin-top:2.5rem; scroll-margin-top:6rem; }
+    .article-p { color:#F8FAFC; line-height:1.85; margin-bottom:1.125rem; }
+    .article-li { position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#F8FAFC; line-height:1.75; }
+    .article-li::before { content:'→'; position:absolute; left:0; color:#F97316; font-weight:700; }
+    .article-code { background:#431407; color:#F97316; padding:0.1em 0.4em; border-radius:0.3em; font-size:0.875rem; font-family:'JetBrains Mono',ui-monospace,monospace; }
+    .toc-link { display:block; padding:0.3rem 0.75rem; font-size:0.8125rem; color:#94A3B8; border-left:2px solid #334155; line-height:1.5; transition:all 150ms; }
+    .toc-link:hover, .toc-link.active { color:#F97316; border-left-color:#F97316; }
     .compare-col-left { border-top:3px solid #F87171; }
     .compare-col-right { border-top:3px solid #10B981; }
   </style>
@@ -273,8 +273,8 @@
               <p class="text-xs text-muted leading-relaxed">Lee mensajes del compilador, fallos de tests y stack traces, y los conecta con el código fuente correspondiente.</p>
             </div>
             <div class="bg-surface border border-line rounded-xl p-5">
-              <div class="w-9 h-9 rounded-xl bg-[#1A1030] flex items-center justify-center mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#A78BFA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <div class="w-9 h-9 rounded-xl bg-[#0A1628] flex items-center justify-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
               </div>
               <h3 class="font-semibold text-ink text-sm mb-1.5">Generación con tu estilo</h3>
               <p class="text-xs text-muted leading-relaxed">Genera código que respeta tus convenciones de nombres, indentación y arquitectura, no un template genérico.</p>
@@ -359,7 +359,7 @@
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
-              <div class="w-1 min-h-[3rem] rounded-full bg-[#6D28D9] shrink-0 mt-0.5"></div>
+              <div class="w-1 min-h-[3rem] rounded-full bg-[#2563EB] shrink-0 mt-0.5"></div>
               <div>
                 <h3 class="font-semibold text-sm text-ink mb-1">Feature development</h3>
                 <p class="text-xs text-muted leading-relaxed">«Añade un endpoint POST <code class="article-code">/api/users</code> que valide email.» El agente crea el handler, validación y tests.</p>
@@ -387,7 +387,7 @@
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all sm:col-span-2">
-              <div class="w-1 min-h-[3rem] rounded-full bg-[#1D4ED8] shrink-0 mt-0.5"></div>
+              <div class="w-1 min-h-[3rem] rounded-full bg-[#2563EB] shrink-0 mt-0.5"></div>
               <div>
                 <h3 class="font-semibold text-sm text-ink mb-1">Security scanning</h3>
                 <p class="text-xs text-muted leading-relaxed">«Busca hardcoded secrets o vulnerabilidades comunes.» El agente recorre el código buscando patrones inseguros conocidos en toda la base de código.</p>
@@ -469,13 +469,13 @@
               <h3 class="font-semibold text-ink text-sm mb-2">¿Cuál es tu lenguaje primario?</h3>
               <p class="text-xs text-muted leading-relaxed">Algunos agentes son mejores con Python, otros con JavaScript/TypeScript, otros agnósticos. Elige uno que domine tu stack. Si trabajas en un monorepo multilenguaje, prioriza herramientas agnósticas de modelo.</p>
             </div>
-            <div class="bg-surface border-2 border-[#ECFDF5] rounded-xl p-5">
+            <div class="bg-surface border-2 border-[#10B981] rounded-xl p-5">
               <div class="text-xs font-bold text-[#10B981] uppercase tracking-wider mb-2">Pregunta 2</div>
               <h3 class="font-semibold text-ink text-sm mb-2">¿Privacidad o velocidad?</h3>
               <p class="text-xs text-muted leading-relaxed">¿Necesitas que el código nunca salga de tu infraestructura? Herramientas con Ollama permiten modelos locales. ¿O prefieres velocidad y calidad máxima? Entonces una API en la nube (Anthropic, OpenAI, Google).</p>
             </div>
-            <div class="bg-surface border-2 border-[#F5F3FF] rounded-xl p-5">
-              <div class="text-xs font-bold text-[#A78BFA] uppercase tracking-wider mb-2">Pregunta 3</div>
+            <div class="bg-surface border-2 border-[#60A5FA] rounded-xl p-5">
+              <div class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider mb-2">Pregunta 3</div>
               <h3 class="font-semibold text-ink text-sm mb-2">¿Un agente solo o orquestación?</h3>
               <p class="text-xs text-muted leading-relaxed">¿Necesitas un agente para tareas simples en tu flujo individual? Un CLI agent. ¿O necesitas coordinar varios agentes especializados en paralelo en el mismo proyecto? Un orquestador.</p>
             </div>

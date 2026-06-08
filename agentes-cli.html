@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -7,15 +7,15 @@
   <meta name="description" content="Catálogo de 16 agentes de código CLI: Claude Code, Gemini CLI, Aider, OpenCode y más. Filtra por categoría, compara características y elige el mejor para ti.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
   tailwind.config = {
     theme: { extend: {
-      colors: { paper:'#080810', surface:'#0F0F1C', ink:'#E8E6FF', muted:'#8888B4', line:'#1C1C2E', brand:'#818CF8', 'brand-soft':'#1E1B4B' },
-      fontFamily: { display:['Fraunces','serif'], body:['Inter','sans-serif'] },
+      colors: { paper:'#0F172A', surface:'#1E293B', ink:'#F8FAFC', muted:'#94A3B8', line:'#334155', brand:'#F97316', 'brand-soft':'#431407' },
+      fontFamily: { display:['JetBrains Mono','monospace'], body:['IBM Plex Sans','sans-serif'] },
       boxShadow: { 'elev-1':'0 1px 3px rgba(0,0,0,.5)', 'elev-2':'0 4px 12px rgba(0,0,0,.6)', 'elev-3':'0 12px 28px rgba(0,0,0,.7)', 'elev-4':'0 24px 60px rgba(0,0,0,.8)' },
-      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#080810 0%,#0C0A18 50%,#080C14 100%)' },
+      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#0F172A 0%,#1A0B04 40%,#0A1020 80%,#0F172A 100%)' },
       screens: { sm:'360px', md:'768px', xl:'1280px' },
       maxWidth: { content:'1152px' },
     }},
@@ -124,12 +124,12 @@
             <span class="ml-auto text-[11px] text-white/30 font-mono">~/proyecto</span>
           </div>
           <div class="p-4 font-mono text-xs leading-relaxed">
-            <div class="terminal-line terminal-line-1 flex gap-2"><span class="text-[#818CF8]">$</span><span class="text-white/90">claude fix "TypeError line 42"</span></div>
+            <div class="terminal-line terminal-line-1 flex gap-2"><span class="text-[#F97316]">$</span><span class="text-white/90">claude fix "TypeError line 42"</span></div>
             <div class="terminal-line terminal-line-2 mt-1.5 text-[#10B981]">✓ Leyendo stack trace…</div>
             <div class="terminal-line terminal-line-3 text-[#10B981]">✓ src/api/handler.ts encontrado</div>
             <div class="terminal-line terminal-line-4 mt-1.5 text-white/70">Aplicando corrección…</div>
             <div class="terminal-line terminal-line-5 mt-1.5"><span class="text-[#FBBF24]">→</span><span class="text-white/90 ml-2">Bug resuelto · 1 archivo modificado</span></div>
-            <div class="terminal-line terminal-line-6 mt-2 flex gap-2"><span class="text-[#818CF8]">$</span><span class="cursor-blink text-white/70">▌</span></div>
+            <div class="terminal-line terminal-line-6 mt-2 flex gap-2"><span class="text-[#F97316]">$</span><span class="cursor-blink text-white/70">▌</span></div>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
     <div id="cliPills" class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filtrar por categoría">
       <button data-filter="todos" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-brand text-white border-brand shadow-sm">Todos</button>
       <button data-filter="open-source" style="--cat:#10B981;--cat-soft:#052014" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Código abierto</button>
-      <button data-filter="closed" style="--cat:#818CF8;--cat-soft:#1A1840" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Cerrado / comercial</button>
+      <button data-filter="closed" style="--cat:#F97316;--cat-soft:#431407" class="px-4 py-1.5 rounded-full border text-sm font-medium cursor-pointer transition-all duration-150 bg-surface text-muted border-line hover:border-brand hover:text-ink">Cerrado / comercial</button>
     </div>
     <div id="cliGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
     <p id="cliEmpty" class="hidden text-center text-muted py-16">No hay herramientas en esta categoría.</p>
@@ -213,7 +213,7 @@
         <div><div class="text-xs font-semibold text-muted uppercase tracking-wide mb-1">Precio</div><div id="modalPrecio" class="text-sm text-ink font-medium"></div></div>
         <div><div class="text-xs font-semibold text-muted uppercase tracking-wide mb-1">Lenguaje / Licencia</div><div id="modalLenguaje" class="text-sm text-ink font-medium"></div></div>
       </div>
-      <a id="modalRepoLink" href="#" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl border-2 text-sm font-semibold transition-colors hover:bg-brand-soft" style="border-color:var(--cat,#4338CA);color:var(--cat,#4338CA)">Ver en GitHub ↗</a>
+      <a id="modalRepoLink" href="#" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl border-2 text-sm font-semibold transition-colors hover:bg-brand-soft" style="border-color:var(--cat,#F97316);color:var(--cat,#F97316)">Ver en GitHub ↗</a>
     </div>
   </div>
 </div>
