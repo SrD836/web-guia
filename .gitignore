@@ -1,0 +1,6 @@
+node_modules/
+test-results/
+playwright-report/
+*.spec.js
+diag-*.spec.js
+package-lock.json

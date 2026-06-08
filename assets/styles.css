@@ -1,0 +1,173 @@
+/* smooth scroll */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; }
+
+/* focus-visible ring */
+:focus-visible {
+  outline: 2px solid #4338CA;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* scroll-reveal keyframe */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal-target { opacity: 0; }
+.reveal-target.revealed { animation: reveal-up 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-target, .reveal-target.revealed {
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+}
+
+/* line-clamp */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Hero dot grid ───────────────────────── */
+.hero-grid {
+  background-image: radial-gradient(circle, rgba(22,22,26,.10) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* ─── Gradient text ───────────────────────── */
+.text-gradient {
+  background: linear-gradient(130deg, #4338CA 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Terminal window ─────────────────────── */
+.terminal {
+  background: #0D0D10;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.terminal-chrome {
+  display: flex; align-items: center; gap: 7px;
+  padding: 11px 16px;
+  background: rgba(255,255,255,.025);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.terminal-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+/* ─── Cursor blink ────────────────────────── */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cursor-blink { animation: blink 1.2s step-end infinite; }
+
+/* ─── Scrollbar ───────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D8D6CF; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6B6B73; }
+
+/* ─── Code blocks ─────────────────────────── */
+.code-dark {
+  background: #0D0D10; color: #C8C6BE;
+  border-radius: 12px; padding: 1.25rem 1.5rem;
+  font-size: 0.875rem; overflow-x: auto;
+}
+
+/* ═══════════════════════════════════════════
+   v3 — Category color system (--cat / --cat-soft)
+   ═══════════════════════════════════════════ */
+
+/* Card color bar */
+.card-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background-color: var(--cat, #4338CA);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Category chip */
+.chip-cat {
+  background-color: var(--cat-soft, #EEF0FF);
+  color: var(--cat, #4338CA);
+}
+
+/* Card hover accent */
+.tool-card:hover {
+  border-color: var(--cat, #4338CA) !important;
+  box-shadow: 0 12px 28px rgba(22,22,26,.10) !important;
+}
+.tool-card:hover h3 { color: var(--cat, #4338CA); }
+
+/* Active filter pill (category) */
+.cat-pill-active {
+  background-color: var(--cat-soft, #EEF0FF);
+  color: var(--cat, #4338CA);
+  border-color: var(--cat, #4338CA);
+  box-shadow: 0 1px 2px rgba(22,22,26,.06);
+}
+
+/* Nav active link */
+.nav-active {
+  color: #16161A !important;
+  font-weight: 600 !important;
+  background-color: #EEF0FF !important;
+}
+
+/* Body scroll lock (modal open) */
+body.modal-open { overflow: hidden; }
+
+/* ─── FAQ accordion ───────────────────────── */
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.28s cubic-bezier(0.22,0.61,0.36,1);
+}
+.faq-answer.open { max-height: 800px; }
+.faq-chevron { transition: transform 0.28s cubic-bezier(0.22,0.61,0.36,1); }
+.faq-chevron.open { transform: rotate(180deg); }
+
+/* ─── Learning path rail ──────────────────── */
+.step-rail { position: relative; padding-bottom: 2rem; }
+.step-rail::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem; top: 2.75rem; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #4338CA 0%, #E6E5DF 100%);
+}
+.step-rail:last-child { padding-bottom: 0; }
+.step-rail:last-child::before { display: none; }
+
+/* ─── Comparativa — stacked cards <480px ──── */
+@media (max-width: 479px) {
+  .comp-table thead { display: none; }
+  .comp-table tbody tr {
+    display: flex; flex-direction: column;
+    border: 1px solid #E6E5DF; border-radius: 14px;
+    margin-bottom: 0.75rem; padding: 1rem;
+    background: #fff;
+  }
+  .comp-table tbody td { border: none; padding: 2px 0; font-size: 0.8125rem; }
+  .comp-table tbody td[data-label]::before {
+    content: attr(data-label) ': ';
+    display: block; font-weight: 600; color: #6B6B73;
+    font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+}
+
+/* ─── Mini tool card (casos-uso / ruta) ────── */
+.mini-card {
+  background: #fff;
+  border: 1px solid #E6E5DF;
+  border-top: 3px solid var(--cat, #4338CA);
+  border-radius: 14px;
+  padding: 1rem;
+  cursor: pointer; text-align: left; width: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.mini-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22,22,26,.10);
+  border-color: var(--cat, #4338CA);
+  border-top-color: var(--cat, #4338CA);
+}

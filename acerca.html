@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca — Guía de Agentes IA</title>
+  <meta name="description" content="Qué es la Guía de Agentes IA, a quién va dirigida, sus fuentes y cómo contribuir a este proyecto de comunidad abierta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { paper:'#FAFAF7', surface:'#FFFFFF', ink:'#16161A', muted:'#6B6B73', line:'#E6E5DF', brand:'#4338CA', 'brand-soft':'#EEF0FF' },
+      fontFamily: { display:['Fraunces','serif'], body:['Inter','sans-serif'] },
+      boxShadow: { 'elev-1':'0 1px 2px rgba(22,22,26,.06)', 'elev-2':'0 4px 12px rgba(22,22,26,.08)', 'elev-3':'0 12px 28px rgba(22,22,26,.12)', 'elev-4':'0 24px 60px rgba(22,22,26,.18)' },
+      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#EEF0FF 0%,#F5F3FF 50%,#ECFDF5 100%)' },
+      screens: { sm:'360px', md:'768px', xl:'1280px' },
+      maxWidth: { content:'1152px' },
+    }},
+  };
+  </script>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="font-body bg-paper text-ink antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-line">
+  <div class="max-w-content mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 font-display text-xl font-bold text-brand shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/></svg>
+        Guía de Agentes
+      </a>
+      <nav class="hidden xl:flex items-center gap-1" aria-label="Navegación principal">
+        <a href="index.html" data-page="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
+        <a href="agentes-cli.html" data-page="agentes-cli.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
+        <a href="orquestadores.html" data-page="orquestadores.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
+        <a href="comparativa.html" data-page="comparativa.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+        <div class="relative">
+          <button id="desktopAprenderBtn" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">
+            Aprender <svg id="desktopAprenderChevron" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="desktopAprenderPanel" hidden class="absolute right-0 top-full mt-1 w-56 bg-surface rounded-xl shadow-elev-3 border border-line py-2 z-50">
+            <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
+            <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
+            <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
+            <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+          </div>
+        </div>
+        <a href="acerca.html" data-page="acerca.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a>
+      </nav>
+      <div class="hidden md:flex xl:hidden items-center">
+        <div class="relative">
+          <button id="tabletMenuBtn" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium border border-line bg-surface hover:bg-line transition-colors">
+            Menú <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="tabletMenuPanel" hidden class="absolute right-0 top-full mt-1 w-60 bg-surface rounded-xl shadow-elev-3 border border-line py-2 z-50">
+            <a href="index.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
+            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Catálogo</div>
+            <a href="agentes-cli.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
+            <a href="orquestadores.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
+            <a href="comparativa.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Aprender</div>
+            <a href="casos-uso.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
+            <a href="ruta-aprendizaje.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
+            <a href="concepto.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
+            <a href="glosario-faq.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+            <div class="border-t border-line mt-1 pt-1"><a href="acerca.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a></div>
+          </div>
+        </div>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-line transition-colors" aria-label="Abrir menú" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobileDrawer" class="hidden fixed inset-0 z-[90]">
+  <div id="mobileDrawerOverlay" class="absolute inset-0 bg-ink/50 backdrop-blur-sm" aria-hidden="true"></div>
+  <div id="mobileDrawerPanel" role="dialog" aria-modal="true" aria-label="Menú de navegación" class="absolute right-0 inset-y-0 w-72 max-[479px]:w-full bg-surface shadow-elev-4 flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-line">
+      <span class="font-display text-lg font-bold text-ink">Navegación</span>
+      <button id="mobileDrawerClose" aria-label="Cerrar menú" class="p-2 rounded-lg hover:bg-line transition-colors text-muted hover:text-ink"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-4 space-y-1">
+      <a href="index.html" data-page="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
+      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Catálogo</div>
+      <a href="agentes-cli.html" data-page="agentes-cli.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
+      <a href="orquestadores.html" data-page="orquestadores.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
+      <a href="comparativa.html" data-page="comparativa.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Aprender</div>
+      <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
+      <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
+      <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
+      <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+      <div class="border-t border-line mt-2 pt-2"><a href="acerca.html" data-page="acerca.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a></div>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="py-14 md:py-20 bg-grad-hero relative overflow-hidden">
+  <div class="hero-grid absolute inset-0 opacity-40" aria-hidden="true"></div>
+  <div class="max-w-content mx-auto px-4 sm:px-6 relative">
+    <div class="max-w-2xl reveal-target">
+      <h1 class="font-display text-4xl md:text-5xl font-black text-ink mb-5 leading-tight">
+        Acerca de <span class="text-gradient">esta guía</span>
+      </h1>
+      <p class="text-lg text-muted leading-relaxed">
+        Una guía abierta para desarrolladores que quieren entender agentes de código CLI y orquestadores. No es un tutorial paso a paso; es un mapa mental. Explica conceptos, categorías y cómo elegir herramientas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="py-12 md:py-16">
+  <div class="max-w-content mx-auto px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto space-y-16">
+
+      <!-- QUÉ ES ESTO -->
+      <section>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-ink">Qué es esto</h2>
+        </div>
+        <p class="text-ink leading-relaxed text-base">
+          Una guía abierta para desarrolladores que quieren entender agentes de código CLI y orquestadores. No es un tutorial paso a paso; es un mapa mental. Explica conceptos, categorías y cómo elegir herramientas en un ecosistema que evoluciona rápidamente.
+        </p>
+        <p class="text-muted leading-relaxed text-sm mt-3">
+          Las herramientas que cubre esta guía transforman la forma en que se escribe software: permiten que un único desarrollador trabaje con la velocidad de un equipo, o que un equipo trabaje con la escala de una organización. Entender cuándo y cómo usarlas es la competencia clave de 2026.
+        </p>
+      </section>
+
+      <!-- A QUIÉN VA DIRIGIDA -->
+      <section>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#ECFDF5] flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#047857]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-ink">A quién va dirigida</h2>
+        </div>
+        <p class="text-ink leading-relaxed text-base mb-5">Desarrolladores que:</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#047857] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm text-ink leading-relaxed">Ya saben programar y quieren entender cómo la IA puede ampliar lo que pueden hacer solos</span>
+          </li>
+          <li class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#047857] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm text-ink leading-relaxed">Están curiosos sobre IA en el desarrollo de software sin querer convertirse en expertos en modelos</span>
+          </li>
+          <li class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#047857] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm text-ink leading-relaxed">Quieren entender la diferencia entre un chatbot y un agente CLI, y por qué esa diferencia importa en la práctica</span>
+          </li>
+          <li class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#047857] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm text-ink leading-relaxed">Necesitan decidir si adoptar estas herramientas en su equipo y quieren comparar opciones sin jerga técnica innecesaria</span>
+          </li>
+        </ul>
+        <p class="text-muted leading-relaxed text-sm mt-5">
+          No necesitas saber cómo entrenar un modelo o cómo funcionan los transformers. Solo necesitas estar abierto a nuevas formas de trabajar.
+        </p>
+      </section>
+
+      <!-- CRÉDITOS Y FUENTES -->
+      <section>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#F5F3FF] flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#6D28D9]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-ink">Créditos y fuentes</h2>
+        </div>
+        <p class="text-ink leading-relaxed text-base mb-6">
+          Esta guía se inspira en investigación comunitaria de dos repositorios clave de GitHub, mantenidos por la comunidad de desarrolladores interesados en el ecosistema de agentes de código:
+        </p>
+        <div class="space-y-4">
+          <a href="https://github.com/andyrewlee/awesome-agent-orchestrators" target="_blank" rel="noopener" class="flex items-start gap-4 p-5 bg-surface border border-line rounded-2xl hover:border-[#047857]/40 hover:shadow-elev-2 transition-all group">
+            <div class="w-10 h-10 rounded-xl bg-[#ECFDF5] border border-[#047857]/20 flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#047857]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="font-semibold text-sm text-ink group-hover:text-[#047857] transition-colors mb-1">andyrewlee/awesome-agent-orchestrators</div>
+              <p class="text-xs text-muted leading-relaxed">Catálogo comunitario de herramientas para orquestar agentes de código. Incluye categorías, comparativas y ejemplos de uso de los principales orquestadores del ecosistema.</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted shrink-0 mt-1 group-hover:text-[#047857] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+          <a href="https://github.com/bradAGI/awesome-cli-coding-agents" target="_blank" rel="noopener" class="flex items-start gap-4 p-5 bg-surface border border-line rounded-2xl hover:border-brand/40 hover:shadow-elev-2 transition-all group">
+            <div class="w-10 h-10 rounded-xl bg-brand-soft border border-brand/20 flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="font-semibold text-sm text-ink group-hover:text-brand transition-colors mb-1">bradAGI/awesome-cli-coding-agents</div>
+              <p class="text-xs text-muted leading-relaxed">Lista comunitaria de agentes de código CLI existentes, con descripciones, licencias y métricas de adopción. La referencia principal del catálogo de agentes CLI de esta guía.</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted shrink-0 mt-1 group-hover:text-brand transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+        <p class="text-muted text-xs leading-relaxed mt-4">
+          Ambos son proyectos comunitarios donde puedes ver categorías, comparativas y ejemplos de uso actualizados por la comunidad.
+        </p>
+      </section>
+
+      <!-- CÓMO CONTRIBUIR -->
+      <section>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#FEF3C7] flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#B45309]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-ink">¿Cómo contribuir?</h2>
+        </div>
+        <p class="text-ink leading-relaxed text-base mb-6">
+          Si encuentras un error, quieres añadir una sección, o tienes una pregunta que no está respondida, esta guía es tuya también:
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-5 bg-surface border border-line rounded-2xl">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">1</div>
+            <div>
+              <h3 class="font-semibold text-ink text-sm mb-1">Abre un issue en el repositorio</h3>
+              <p class="text-xs text-muted leading-relaxed">Describe el error, la sección faltante o la pregunta sin respuesta. Los issues son la forma más rápida de señalar algo que mejorar.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 bg-surface border border-line rounded-2xl">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">2</div>
+            <div>
+              <h3 class="font-semibold text-ink text-sm mb-1">Contribuye con un pull request</h3>
+              <p class="text-xs text-muted leading-relaxed">Si tienes la corrección o el contenido nuevo, abre directamente un PR. Incluye el contexto del cambio y las fuentes si aplica.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 bg-surface border border-line rounded-2xl">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">3</div>
+            <div>
+              <h3 class="font-semibold text-ink text-sm mb-1">Sugiere mejoras a través de una discusión</h3>
+              <p class="text-xs text-muted leading-relaxed">Para cambios grandes o ideas de dirección, abre una discusión antes de implementar. Es más rápido alinear antes de escribir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 p-5 bg-grad-hero rounded-2xl border border-brand/20 text-center">
+          <p class="text-sm text-ink font-medium mb-1">Esta guía es comunidad.</p>
+          <p class="text-xs text-muted">Esperamos tus aportaciones.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-line bg-surface">
+  <div class="max-w-content mx-auto px-4 sm:px-6 py-12">
+    <div class="flex flex-col md:flex-row items-start justify-between gap-10">
+      <div>
+        <div class="font-display text-xl font-bold text-brand mb-2">Guía de Agentes IA</div>
+        <p class="text-sm text-muted max-w-xs leading-relaxed">Una guía abierta para desarrolladores que quieren entender los agentes de código CLI y orquestadores.</p>
+        <p class="text-xs text-muted mt-4">Datos a fecha de junio de 2026</p>
+      </div>
+      <nav class="grid grid-cols-2 gap-x-16 gap-y-2 text-sm" aria-label="Mapa del sitio">
+        <a href="index.html" class="text-muted hover:text-ink transition-colors">Inicio</a>
+        <a href="agentes-cli.html" class="text-muted hover:text-ink transition-colors">Agentes CLI</a>
+        <a href="orquestadores.html" class="text-muted hover:text-ink transition-colors">Orquestadores</a>
+        <a href="comparativa.html" class="text-muted hover:text-ink transition-colors">Comparativa</a>
+        <a href="casos-uso.html" class="text-muted hover:text-ink transition-colors">Casos de uso</a>
+        <a href="ruta-aprendizaje.html" class="text-muted hover:text-ink transition-colors">Ruta de aprendizaje</a>
+        <a href="concepto.html" class="text-muted hover:text-ink transition-colors">Conceptos</a>
+        <a href="glosario-faq.html" class="text-muted hover:text-ink transition-colors">Glosario y FAQ</a>
+        <a href="acerca.html" class="text-muted hover:text-ink transition-colors">Acerca</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/data-v3-research.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  setActiveNavLinks();
+});
+</script>
+</body>
+</html>

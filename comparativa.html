@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparativa — Guía de Agentes IA</title>
+  <meta name="description" content="Comparativa de las 30 herramientas de agentes IA por estrellas, licencia, precio y 8 ejes de evaluación. Toma la mejor decisión para tu proyecto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { paper:'#FAFAF7', surface:'#FFFFFF', ink:'#16161A', muted:'#6B6B73', line:'#E6E5DF', brand:'#4338CA', 'brand-soft':'#EEF0FF' },
+      fontFamily: { display:['Fraunces','serif'], body:['Inter','sans-serif'] },
+      boxShadow: { 'elev-1':'0 1px 2px rgba(22,22,26,.06)', 'elev-2':'0 4px 12px rgba(22,22,26,.08)', 'elev-3':'0 12px 28px rgba(22,22,26,.12)', 'elev-4':'0 24px 60px rgba(22,22,26,.18)' },
+      backgroundImage: { 'grad-hero':'linear-gradient(135deg,#EEF0FF 0%,#F5F3FF 50%,#ECFDF5 100%)' },
+      screens: { sm:'360px', md:'768px', xl:'1280px' },
+      maxWidth: { content:'1152px' },
+    }},
+  };
+  </script>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .comp-table th { position:sticky;top:0;z-index:10;background:#FFFFFF; }
+    @media(max-width:479px){
+      .comp-table-wrap{overflow-x:auto;}
+    }
+  </style>
+</head>
+<body class="font-body bg-paper text-ink antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-line">
+  <div class="max-w-content mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 font-display text-xl font-bold text-brand shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/></svg>
+        Guía de Agentes
+      </a>
+      <nav class="hidden xl:flex items-center gap-1" aria-label="Navegación principal">
+        <a href="index.html" data-page="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
+        <a href="agentes-cli.html" data-page="agentes-cli.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
+        <a href="orquestadores.html" data-page="orquestadores.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
+        <a href="comparativa.html" data-page="comparativa.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+        <div class="relative">
+          <button id="desktopAprenderBtn" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">
+            Aprender <svg id="desktopAprenderChevron" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="desktopAprenderPanel" hidden class="absolute right-0 top-full mt-1 w-56 bg-surface rounded-xl shadow-elev-3 border border-line py-2 z-50">
+            <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
+            <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
+            <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
+            <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+          </div>
+        </div>
+        <a href="acerca.html" data-page="acerca.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a>
+      </nav>
+      <div class="hidden md:flex xl:hidden items-center">
+        <div class="relative">
+          <button id="tabletMenuBtn" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium border border-line bg-surface hover:bg-line transition-colors">
+            Menú <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="tabletMenuPanel" hidden class="absolute right-0 top-full mt-1 w-60 bg-surface rounded-xl shadow-elev-3 border border-line py-2 z-50">
+            <a href="index.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
+            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Catálogo</div>
+            <a href="agentes-cli.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
+            <a href="orquestadores.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
+            <a href="comparativa.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Aprender</div>
+            <a href="casos-uso.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
+            <a href="ruta-aprendizaje.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
+            <a href="concepto.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
+            <a href="glosario-faq.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+            <div class="border-t border-line mt-1 pt-1"><a href="acerca.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a></div>
+          </div>
+        </div>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-line transition-colors" aria-label="Abrir menú" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobileDrawer" class="hidden fixed inset-0 z-[90]">
+  <div id="mobileDrawerOverlay" class="absolute inset-0 bg-ink/50 backdrop-blur-sm" aria-hidden="true"></div>
+  <div id="mobileDrawerPanel" role="dialog" aria-modal="true" aria-label="Menú de navegación" class="absolute right-0 inset-y-0 w-72 max-[479px]:w-full bg-surface shadow-elev-4 flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-line">
+      <span class="font-display text-lg font-bold text-ink">Navegación</span>
+      <button id="mobileDrawerClose" aria-label="Cerrar menú" class="p-2 rounded-lg hover:bg-line transition-colors text-muted hover:text-ink"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-4 space-y-1">
+      <a href="index.html" data-page="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
+      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Catálogo</div>
+      <a href="agentes-cli.html" data-page="agentes-cli.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
+      <a href="orquestadores.html" data-page="orquestadores.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
+      <a href="comparativa.html" data-page="comparativa.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Aprender</div>
+      <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
+      <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
+      <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
+      <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+      <div class="border-t border-line mt-2 pt-2"><a href="acerca.html" data-page="acerca.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a></div>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="py-14 md:py-18 bg-grad-hero relative overflow-hidden">
+  <div class="hero-grid absolute inset-0 opacity-40" aria-hidden="true"></div>
+  <div class="max-w-content mx-auto px-4 sm:px-6 relative">
+    <div class="max-w-2xl reveal-target">
+      <h1 class="font-display text-4xl md:text-5xl font-black text-ink mb-4 leading-tight">Comparativa <span class="text-gradient">completa</span></h1>
+      <p class="text-lg text-muted leading-relaxed">
+        En esta página encontrarás una comparación lado a lado de las 30 herramientas de esta guía. La tabla de herramientas las ordena por popularidad (estrellas en GitHub) e incluye precio, licencia y tipo. Los ejes de evaluación te muestran las diferencias conceptuales entre agentes CLI y orquestadores en 8 dimensiones clave para decidir cuál encaja mejor en tu flujo de trabajo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AXES TABLE -->
+<section class="py-12 md:py-16 bg-surface border-b border-line">
+  <div class="max-w-content mx-auto px-4 sm:px-6">
+    <h2 class="font-display text-2xl font-bold text-ink mb-6 reveal-target">Ejes de evaluación</h2>
+    <div class="overflow-x-auto rounded-2xl border border-line shadow-elev-1">
+      <table class="w-full text-sm" aria-label="Comparativa por ejes">
+        <thead>
+          <tr class="border-b border-line bg-paper">
+            <th class="text-left px-4 py-3 font-semibold text-muted w-40">Eje</th>
+            <th class="text-left px-4 py-3 font-semibold" style="color:#047857">Agente CLI</th>
+            <th class="text-left px-4 py-3 font-semibold" style="color:#6D28D9">Orquestador</th>
+          </tr>
+        </thead>
+        <tbody id="compAxes" class="divide-y divide-line"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS TABLE -->
+<section class="py-12 md:py-16 bg-paper">
+  <div class="max-w-content mx-auto px-4 sm:px-6">
+    <h2 class="font-display text-2xl font-bold text-ink mb-6 reveal-target">Todas las herramientas</h2>
+    <div class="comp-table-wrap overflow-x-auto rounded-2xl border border-line shadow-elev-1">
+      <table class="comp-table w-full text-sm min-w-[600px]" aria-label="Todas las herramientas ordenadas por popularidad">
+        <thead>
+          <tr class="border-b border-line">
+            <th class="text-left px-4 py-3 font-semibold text-muted">Herramienta</th>
+            <th class="text-left px-4 py-3 font-semibold text-muted hidden md:table-cell">Tipo</th>
+            <th class="text-left px-4 py-3 font-semibold text-muted">⭐ Estrellas</th>
+            <th class="text-left px-4 py-3 font-semibold text-muted hidden md:table-cell">Precio</th>
+            <th class="text-left px-4 py-3 font-semibold text-muted hidden md:table-cell">Lenguaje</th>
+            <th class="px-4 py-3 font-semibold text-muted text-center">Detalle</th>
+          </tr>
+        </thead>
+        <tbody id="compTableBody" class="divide-y divide-line"></tbody>
+      </table>
+    </div>
+    <p class="text-xs text-muted mt-4">* Estrellas de GitHub a fecha de junio de 2026. Haz clic en «ver» para abrir el detalle completo de cada herramienta.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-line bg-surface">
+  <div class="max-w-content mx-auto px-4 sm:px-6 py-12">
+    <div class="flex flex-col md:flex-row items-start justify-between gap-10">
+      <div>
+        <div class="font-display text-xl font-bold text-brand mb-2">Guía de Agentes IA</div>
+        <p class="text-sm text-muted max-w-xs leading-relaxed">Una guía abierta para desarrolladores que quieren entender los agentes de código CLI y orquestadores.</p>
+        <p class="text-xs text-muted mt-4">Datos a fecha de junio de 2026</p>
+      </div>
+      <nav class="grid grid-cols-2 gap-x-16 gap-y-2 text-sm" aria-label="Mapa del sitio">
+        <a href="index.html" class="text-muted hover:text-ink transition-colors">Inicio</a>
+        <a href="agentes-cli.html" class="text-muted hover:text-ink transition-colors">Agentes CLI</a>
+        <a href="orquestadores.html" class="text-muted hover:text-ink transition-colors">Orquestadores</a>
+        <a href="comparativa.html" class="text-muted hover:text-ink transition-colors">Comparativa</a>
+        <a href="casos-uso.html" class="text-muted hover:text-ink transition-colors">Casos de uso</a>
+        <a href="ruta-aprendizaje.html" class="text-muted hover:text-ink transition-colors">Ruta de aprendizaje</a>
+        <a href="concepto.html" class="text-muted hover:text-ink transition-colors">Conceptos</a>
+        <a href="glosario-faq.html" class="text-muted hover:text-ink transition-colors">Glosario y FAQ</a>
+        <a href="acerca.html" class="text-muted hover:text-ink transition-colors">Acerca</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Tool Modal -->
+<div id="toolModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+  <div id="modalOverlay" class="absolute inset-0 bg-ink/50 backdrop-blur-sm" aria-hidden="true"></div>
+  <div id="modalPanel" role="dialog" aria-modal="true" aria-labelledby="modalToolName" class="relative z-10 bg-surface rounded-2xl shadow-elev-4 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <div class="card-bar" aria-hidden="true"></div>
+    <div class="p-6 md:p-8 pt-8">
+      <div class="flex items-start justify-between gap-4 mb-4">
+        <h2 id="modalToolName" class="font-display text-2xl font-bold text-ink leading-tight"></h2>
+        <button id="modalClose" aria-label="Cerrar" class="shrink-0 p-2 rounded-lg hover:bg-line transition-colors text-muted hover:text-ink"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <div class="mb-5"><span id="modalCatChip" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold"></span></div>
+      <p id="modalLongDesc" class="text-ink/80 text-sm leading-relaxed mb-6"></p>
+      <div id="modalProsBlock" class="bg-[#ECFDF5] rounded-xl p-4 mb-4"><h3 class="text-xs font-semibold text-[#047857] uppercase tracking-wide mb-3">Ventajas</h3><ul id="modalPros" class="space-y-2 text-sm text-ink/80"></ul></div>
+      <div id="modalContrasBlock" class="bg-[#FFF1F2] rounded-xl p-4 mb-6"><h3 class="text-xs font-semibold text-[#BE123C] uppercase tracking-wide mb-3">Limitaciones</h3><ul id="modalContras" class="space-y-2 text-sm text-ink/80"></ul></div>
+      <div class="mb-4"><h3 class="text-xs font-semibold text-ink uppercase tracking-wide mb-2">Cómo empezar</h3><p id="modalComoEmpezar" class="text-sm text-muted leading-relaxed"></p></div>
+      <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-line/30 rounded-xl"><div><div class="text-xs font-semibold text-muted uppercase tracking-wide mb-1">Precio</div><div id="modalPrecio" class="text-sm text-ink font-medium"></div></div><div><div class="text-xs font-semibold text-muted uppercase tracking-wide mb-1">Lenguaje / Licencia</div><div id="modalLenguaje" class="text-sm text-ink font-medium"></div></div></div>
+      <a id="modalRepoLink" href="#" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-xl border-2 text-sm font-semibold transition-colors hover:bg-brand-soft" style="border-color:var(--cat,#4338CA);color:var(--cat,#4338CA)">Ver en GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/data-v3-research.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderComparativa('compTableBody', 'compAxes');
+});
+</script>
+</body>
+</html>
