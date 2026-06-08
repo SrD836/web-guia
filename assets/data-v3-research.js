@@ -12,7 +12,7 @@
 // Formato: { name, long_desc, pros[], contras[], como_empezar, casos_uso[], precio, lenguaje }
 // ─────────────────────────────────────────────────────────────────────────────
 
-window.GUIA_V3 = {
+window.GUIA_V3_ES = {
 
   // ── CLI AGENTS ──────────────────────────────────────────────────────────────
 

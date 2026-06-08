@@ -138,12 +138,12 @@ function fillModal(tool) {
   } else { contrasBlock.style.display = 'none'; }
 
   var comoEl = document.getElementById('modalComoEmpezar');
-  if (comoEl) comoEl.innerHTML = renderInline(tool.como_empezar || 'Consulta la documentación oficial del proyecto.');
+  if (comoEl) comoEl.innerHTML = renderInline(tool.como_empezar || I18N.t('ui.comoEmpezarFallback'));
 
   var precioEl = document.getElementById('modalPrecio');
-  if (precioEl) precioEl.textContent = tool.precio || 'Desconocido';
+  if (precioEl) precioEl.textContent = tool.precio || I18N.t('ui.desconocido');
   var lenguajeEl = document.getElementById('modalLenguaje');
-  if (lenguajeEl) lenguajeEl.textContent = tool.lenguaje || 'Desconocido';
+  if (lenguajeEl) lenguajeEl.textContent = tool.lenguaje || I18N.t('ui.desconocido');
 
   var repoLink = document.getElementById('modalRepoLink');
   if (repoLink) {
@@ -330,9 +330,9 @@ function renderCards(items, containerId) {
         stars +
         '<div class="flex items-center gap-3">' +
           '<button class="text-sm font-semibold transition-colors" style="color:' + cat.strong + '"' +
-            ' data-tool="' + esc(tool.name) + '">Ver detalle</button>' +
+            ' data-tool="' + esc(tool.name) + '">' + I18N.t('ui.verDetalle') + '</button>' +
           '<a href="' + esc(tool.url) + '" target="_blank" rel="noopener"' +
-            ' class="text-sm text-muted hover:text-ink transition-colors">Repo ↗</a>' +
+            ' class="text-sm text-muted hover:text-ink transition-colors">' + I18N.t('ui.repo') + '</a>' +
         '</div>' +
       '</div>' +
       '</article>';
@@ -410,24 +410,24 @@ function renderComparativa(tableBodyId, axesId) {
       var cat = CAT_COLORS[t.category] || { strong: '#4338CA', soft: '#EEF0FF' };
       var label = (window.GUIA_LABELS && GUIA_LABELS[t.category]) || t.category || '';
       var starsStr = t.stars > 0 ? fmtStars(t.stars) : '—';
-      var precio = t.precio ? t.precio.split(';')[0].trim() : 'Desconocido';
+      var precio = t.precio ? t.precio.split(';')[0].trim() : I18N.t('ui.desconocido');
       if (precio.length > 30) precio = precio.slice(0, 28) + '…';
-      var lenguaje = (t.lenguaje || 'Desconocido').split('·')[0].trim();
+      var lenguaje = (t.lenguaje || I18N.t('ui.desconocido')).split('·')[0].trim();
       var comienzo = t.como_empezar ? t.como_empezar.replace(/`[^`]+`/g, function(m){ return m.slice(1,-1); }) : '—';
       if (comienzo.length > 60) comienzo = comienzo.slice(0, 58) + '…';
 
       return '<tr class="border-b border-line hover:bg-brand-soft/30 transition-colors">' +
-        '<td class="py-3 px-4 font-medium text-ink" data-label="Herramienta">' +
+        '<td class="py-3 px-4 font-medium text-ink" data-label="' + I18N.t('ui.col.herramienta') + '">' +
           '<button class="text-left font-semibold hover:underline" style="color:' + cat.strong + '" data-tool="' + esc(t.name) + '">' + esc(t.name) + '</button>' +
         '</td>' +
-        '<td class="py-3 px-4" data-label="Categoría">' +
+        '<td class="py-3 px-4" data-label="' + I18N.t('ui.col.categoria') + '">' +
           '<span class="chip-cat inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap"' +
             ' style="--cat:' + cat.strong + '; --cat-soft:' + cat.soft + '">' + esc(label) + '</span>' +
         '</td>' +
-        '<td class="py-3 px-4 text-muted text-sm" data-label="Estrellas">★ ' + starsStr + '</td>' +
-        '<td class="py-3 px-4 text-muted text-sm" data-label="Precio">' + esc(precio) + '</td>' +
-        '<td class="py-3 px-4 text-muted text-sm" data-label="Lenguaje">' + esc(lenguaje) + '</td>' +
-        '<td class="py-3 px-4 text-muted text-xs max-w-[220px]" data-label="Primer paso"><code class="bg-line/60 px-1 py-0.5 rounded font-mono">' + esc(comienzo) + '</code></td>' +
+        '<td class="py-3 px-4 text-muted text-sm" data-label="' + I18N.t('ui.col.estrellas') + '">★ ' + starsStr + '</td>' +
+        '<td class="py-3 px-4 text-muted text-sm" data-label="' + I18N.t('ui.col.precio') + '">' + esc(precio) + '</td>' +
+        '<td class="py-3 px-4 text-muted text-sm" data-label="' + I18N.t('ui.col.lenguaje') + '">' + esc(lenguaje) + '</td>' +
+        '<td class="py-3 px-4 text-muted text-xs max-w-[220px]" data-label="' + I18N.t('ui.col.primerPaso') + '"><code class="bg-line/60 px-1 py-0.5 rounded font-mono">' + esc(comienzo) + '</code></td>' +
         '</tr>';
     }).join('');
   }
@@ -481,6 +481,31 @@ function renderGlosario(containerId) {
       '</div>';
   }).join('');
 }
+
+/* ─── Dynamic rerender (called by I18N.set on lang swap) ─────────── */
+window.rerenderDynamic = function() {
+  if (window.GUIA_DATA) {
+    if (document.getElementById('cliGrid'))
+      renderCards(GUIA_DATA.cli || [], 'cliGrid');
+    if (document.getElementById('orchGrid'))
+      renderCards(GUIA_DATA.orquestadores || [], 'orchGrid');
+    if (document.getElementById('compTableBody'))
+      renderComparativa('compTableBody', 'compAxes');
+    if (document.getElementById('featuredGrid')) {
+      var featured = [].concat(
+        (GUIA_DATA.cli || []).filter(function(t) {
+          return ['Claude Code', 'Gemini CLI', 'Aider'].indexOf(t.name) > -1;
+        }),
+        (GUIA_DATA.orquestadores || []).filter(function(t) {
+          return ['claude-flow', 'claude-squad', 'gastown'].indexOf(t.name) > -1;
+        })
+      );
+      renderCards(featured, 'featuredGrid');
+    }
+  }
+  if (document.getElementById('glosarioContainer'))
+    renderGlosario('glosarioContainer');
+};
 
 /* ─── Boot ───────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function() {

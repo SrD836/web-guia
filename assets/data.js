@@ -3,7 +3,7 @@
 //         https://github.com/andyrewlee/awesome-agent-orchestrators
 // Datos citados de las listas fuente; ninguna entrada es inventada.
 
-window.GUIA_DATA = {
+window.GUIA_DATA_ES = {
   cli: [
     {
       name: "Hermes Agent",

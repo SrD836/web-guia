@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conceptos — Guía de Agentes IA</title>
-  <meta name="description" content="¿Qué es un agente de código CLI y por qué está cambiando la ingeniería de software? Artículo completo con ejemplos, comparativas y guía para elegir la herramienta adecuada.">
+  <title data-i18n="concepto.meta.title">Conceptos — Guía de Agentes IA</title>
+  <meta name="description" data-i18n-attr="content:concepto.meta.desc" content="¿Qué es un agente de código CLI y por qué está cambiando la ingeniería de software? Artículo completo con ejemplos, comparativas y guía para elegir la herramienta adecuada.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,47 +42,51 @@
     <div class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-2 font-display text-xl font-bold text-brand shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/></svg>
-        Guía de Agentes
+        <span data-i18n="nav.brand">Guía de Agentes</span>
       </a>
-      <nav class="hidden xl:flex items-center gap-1" aria-label="Navegación principal">
-        <a href="index.html" data-page="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
-        <a href="agentes-cli.html" data-page="agentes-cli.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
-        <a href="orquestadores.html" data-page="orquestadores.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
-        <a href="comparativa.html" data-page="comparativa.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
+      <nav class="hidden xl:flex items-center gap-1" aria-label="Navegación principal" data-i18n-attr="aria-label:nav.principalLabel">
+        <a href="index.html" data-page="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.inicio">Inicio</a>
+        <a href="agentes-cli.html" data-page="agentes-cli.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.agentesCli">Agentes CLI</a>
+        <a href="orquestadores.html" data-page="orquestadores.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.orquestadores">Orquestadores</a>
+        <a href="comparativa.html" data-page="comparativa.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.comparativa">Comparativa</a>
         <div class="relative">
           <button id="desktopAprenderBtn" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">
-            Aprender <svg id="desktopAprenderChevron" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            <span data-i18n="nav.aprender">Aprender</span> <svg id="desktopAprenderChevron" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
           </button>
           <div id="desktopAprenderPanel" hidden class="absolute right-0 top-full mt-1 w-56 bg-surface rounded-xl shadow-elev-3 border border-line py-2 z-50">
-            <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
-            <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
-            <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
-            <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
+            <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.casosUso">Casos de uso</a>
+            <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.ruta">Ruta de aprendizaje</a>
+            <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.conceptos">Conceptos</a>
+            <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.glosarioFaq">Glosario y FAQ</a>
           </div>
         </div>
-        <a href="acerca.html" data-page="acerca.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a>
+        <a href="acerca.html" data-page="acerca.html" class="px-3 py-2 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.acerca">Acerca</a>
       </nav>
+      <div class="lang-toggle flex items-center gap-0.5" role="group" aria-label="Idioma / Language" data-i18n-attr="aria-label:nav.langGroup">
+        <button data-lang="es" aria-pressed="true" class="px-2.5 py-1 rounded-lg text-xs font-semibold font-mono transition-colors duration-150">ES</button>
+        <button data-lang="en" aria-pressed="false" class="px-2.5 py-1 rounded-lg text-xs font-semibold font-mono transition-colors duration-150">EN</button>
+      </div>
       <div class="hidden md:flex xl:hidden items-center">
         <div class="relative">
           <button id="tabletMenuBtn" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium border border-line bg-surface hover:bg-line transition-colors">
-            Menú <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            <span data-i18n="nav.menu">Menú</span> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
           </button>
           <div id="tabletMenuPanel" hidden class="absolute right-0 top-full mt-1 w-60 bg-surface rounded-xl shadow-elev-3 border border-line py-2 z-50">
-            <a href="index.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
-            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Catálogo</div>
-            <a href="agentes-cli.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
-            <a href="orquestadores.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
-            <a href="comparativa.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
-            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Aprender</div>
-            <a href="casos-uso.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
-            <a href="ruta-aprendizaje.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
-            <a href="concepto.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
-            <a href="glosario-faq.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
-            <div class="border-t border-line mt-1 pt-1"><a href="acerca.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a></div>
+            <a href="index.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.inicio">Inicio</a>
+            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider" data-i18n="nav.catalogo">Catálogo</div>
+            <a href="agentes-cli.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.agentesCli">Agentes CLI</a>
+            <a href="orquestadores.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.orquestadores">Orquestadores</a>
+            <a href="comparativa.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.comparativa">Comparativa</a>
+            <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider" data-i18n="nav.aprender">Aprender</div>
+            <a href="casos-uso.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.casosUso">Casos de uso</a>
+            <a href="ruta-aprendizaje.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.ruta">Ruta de aprendizaje</a>
+            <a href="concepto.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.conceptos">Conceptos</a>
+            <a href="glosario-faq.html" class="block px-6 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.glosarioFaq">Glosario y FAQ</a>
+            <div class="border-t border-line mt-1 pt-1"><a href="acerca.html" class="block px-4 py-2.5 text-sm text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.acerca">Acerca</a></div>
           </div>
         </div>
       </div>
-      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-line transition-colors" aria-label="Abrir menú" aria-expanded="false">
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-line transition-colors" aria-label="Abrir menú" data-i18n-attr="aria-label:nav.openMenu" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -91,24 +95,30 @@
 
 <div id="mobileDrawer" class="hidden fixed inset-0 z-[90]">
   <div id="mobileDrawerOverlay" class="absolute inset-0 bg-ink/50 backdrop-blur-sm" aria-hidden="true"></div>
-  <div id="mobileDrawerPanel" role="dialog" aria-modal="true" aria-label="Menú de navegación" class="absolute right-0 inset-y-0 w-72 max-[479px]:w-full bg-surface shadow-elev-4 flex flex-col">
+  <div id="mobileDrawerPanel" role="dialog" aria-modal="true" aria-label="Menú de navegación" data-i18n-attr="aria-label:nav.drawerLabel" class="absolute right-0 inset-y-0 w-72 max-[479px]:w-full bg-surface shadow-elev-4 flex flex-col">
     <div class="flex items-center justify-between p-5 border-b border-line">
-      <span class="font-display text-lg font-bold text-ink">Navegación</span>
-      <button id="mobileDrawerClose" aria-label="Cerrar menú" class="p-2 rounded-lg hover:bg-line transition-colors text-muted hover:text-ink"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <span class="font-display text-lg font-bold text-ink" data-i18n="nav.navegacion">Navegación</span>
+      <button id="mobileDrawerClose" aria-label="Cerrar menú" data-i18n-attr="aria-label:nav.closeMenu" class="p-2 rounded-lg hover:bg-line transition-colors text-muted hover:text-ink"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
     <nav class="flex-1 overflow-y-auto p-4 space-y-1">
-      <a href="index.html" data-page="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Inicio</a>
-      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Catálogo</div>
-      <a href="agentes-cli.html" data-page="agentes-cli.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Agentes CLI</a>
-      <a href="orquestadores.html" data-page="orquestadores.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Orquestadores</a>
-      <a href="comparativa.html" data-page="comparativa.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Comparativa</a>
-      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">Aprender</div>
-      <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Casos de uso</a>
-      <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Ruta de aprendizaje</a>
-      <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Conceptos</a>
-      <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Glosario y FAQ</a>
-      <div class="border-t border-line mt-2 pt-2"><a href="acerca.html" data-page="acerca.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors">Acerca</a></div>
+      <a href="index.html" data-page="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.inicio">Inicio</a>
+      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider" data-i18n="nav.catalogo">Catálogo</div>
+      <a href="agentes-cli.html" data-page="agentes-cli.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.agentesCli">Agentes CLI</a>
+      <a href="orquestadores.html" data-page="orquestadores.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.orquestadores">Orquestadores</a>
+      <a href="comparativa.html" data-page="comparativa.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.comparativa">Comparativa</a>
+      <div class="px-4 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider" data-i18n="nav.aprender">Aprender</div>
+      <a href="casos-uso.html" data-page="casos-uso.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.casosUso">Casos de uso</a>
+      <a href="ruta-aprendizaje.html" data-page="ruta-aprendizaje.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.ruta">Ruta de aprendizaje</a>
+      <a href="concepto.html" data-page="concepto.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.conceptos">Conceptos</a>
+      <a href="glosario-faq.html" data-page="glosario-faq.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.glosarioFaq">Glosario y FAQ</a>
+      <div class="border-t border-line mt-2 pt-2"><a href="acerca.html" data-page="acerca.html" class="block px-4 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-ink hover:bg-line transition-colors" data-i18n="nav.acerca">Acerca</a></div>
     </nav>
+    <div class="border-t border-line mt-2 pt-4 px-4 pb-4">
+      <div class="lang-toggle flex items-center gap-1" role="group" aria-label="Idioma / Language" data-i18n-attr="aria-label:nav.langGroup">
+        <button data-lang="es" aria-pressed="true" class="px-3 py-1.5 rounded-lg text-xs font-semibold font-mono transition-colors duration-150">ES</button>
+        <button data-lang="en" aria-pressed="false" class="px-3 py-1.5 rounded-lg text-xs font-semibold font-mono transition-colors duration-150">EN</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -119,18 +129,18 @@
     <div class="max-w-2xl reveal-target">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-semibold mb-5">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        Artículo conceptual
+        <span data-i18n="concepto.hero.badge">Artículo conceptual</span>
       </div>
-      <h1 class="font-display text-4xl md:text-5xl font-black text-ink mb-5 leading-tight">
+      <h1 class="font-display text-4xl md:text-5xl font-black text-ink mb-5 leading-tight" data-i18n-html="concepto.hero.h1">
         ¿Qué es un agente de código CLI y por qué está <span class="text-gradient">cambiando la ingeniería</span> de software?
       </h1>
-      <p class="text-lg text-muted leading-relaxed">
+      <p class="text-lg text-muted leading-relaxed" data-i18n="concepto.hero.subtitle">
         De Stack Overflow y copiar-pegar a herramientas que leen tu repositorio, entienden tu arquitectura y escriben código específico para tu proyecto. Una explicación completa para desarrolladores.
       </p>
       <div class="flex flex-wrap gap-3 mt-6 text-sm text-muted">
-        <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>8 min lectura</span>
-        <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>7 secciones</span>
-        <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Junio 2026</span>
+        <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span data-i18n="concepto.hero.readTime">8 min lectura</span></span>
+        <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg><span data-i18n="concepto.hero.sections">7 secciones</span></span>
+        <span class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg><span data-i18n="concepto.hero.date">Junio 2026</span></span>
       </div>
     </div>
   </div>
@@ -141,17 +151,17 @@
   <div class="max-w-content mx-auto px-4 sm:px-6 py-4">
     <details class="group">
       <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-ink list-none">
-        <span>Tabla de contenidos</span>
+        <span data-i18n="concepto.toc.label">Tabla de contenidos</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
       </summary>
       <nav class="mt-3 space-y-1 pl-2">
-        <a href="#frustracion" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">1. La frustración de explicar código</a>
-        <a href="#entrada" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">2. Entrada de los agentes CLI</a>
-        <a href="#funcionamiento" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">3. Cómo funciona bajo el capó</a>
-        <a href="#diferencia" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">4. Diferencia con chatbot</a>
-        <a href="#casos" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">5. Casos de uso reales</a>
-        <a href="#limitaciones" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">6. Limitaciones reales</a>
-        <a href="#como-elegir" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors">7. Cómo elegir</a>
+        <a href="#frustracion" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item1">1. La frustración de explicar código</a>
+        <a href="#entrada" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item2">2. Entrada de los agentes CLI</a>
+        <a href="#funcionamiento" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item3">3. Cómo funciona bajo el capó</a>
+        <a href="#diferencia" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item4">4. Diferencia con chatbot</a>
+        <a href="#casos" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item5">5. Casos de uso reales</a>
+        <a href="#limitaciones" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item6">6. Limitaciones reales</a>
+        <a href="#como-elegir" class="block py-1.5 text-sm text-muted hover:text-brand transition-colors" data-i18n="concepto.toc.item7">7. Cómo elegir</a>
       </nav>
     </details>
   </div>
@@ -165,19 +175,19 @@
       <!-- SIDEBAR TOC (desktop) -->
       <aside class="hidden xl:block">
         <div class="sticky top-24">
-          <h2 class="text-[11px] font-semibold text-muted uppercase tracking-wider mb-4 px-3">Contenido</h2>
+          <h2 class="text-[11px] font-semibold text-muted uppercase tracking-wider mb-4 px-3" data-i18n="concepto.sidebar.heading">Contenido</h2>
           <nav class="space-y-0.5" aria-label="Tabla de contenidos">
-            <a href="#frustracion" class="toc-link">1. La frustración de explicar código</a>
-            <a href="#entrada" class="toc-link">2. Entrada de los agentes CLI</a>
-            <a href="#funcionamiento" class="toc-link">3. Cómo funciona bajo el capó</a>
-            <a href="#diferencia" class="toc-link">4. Diferencia con chatbot</a>
-            <a href="#casos" class="toc-link">5. Casos de uso reales</a>
-            <a href="#limitaciones" class="toc-link">6. Limitaciones reales</a>
-            <a href="#como-elegir" class="toc-link">7. Cómo elegir</a>
+            <a href="#frustracion" class="toc-link" data-i18n="concepto.toc.item1">1. La frustración de explicar código</a>
+            <a href="#entrada" class="toc-link" data-i18n="concepto.toc.item2">2. Entrada de los agentes CLI</a>
+            <a href="#funcionamiento" class="toc-link" data-i18n="concepto.toc.item3">3. Cómo funciona bajo el capó</a>
+            <a href="#diferencia" class="toc-link" data-i18n="concepto.toc.item4">4. Diferencia con chatbot</a>
+            <a href="#casos" class="toc-link" data-i18n="concepto.toc.item5">5. Casos de uso reales</a>
+            <a href="#limitaciones" class="toc-link" data-i18n="concepto.toc.item6">6. Limitaciones reales</a>
+            <a href="#como-elegir" class="toc-link" data-i18n="concepto.toc.item7">7. Cómo elegir</a>
           </nav>
           <div class="mt-8 p-4 bg-brand-soft rounded-xl border border-brand/20">
-            <p class="text-xs text-brand font-medium leading-relaxed mb-3">¿Listo para ver las herramientas?</p>
-            <a href="agentes-cli.html" class="block text-center text-xs font-semibold text-brand bg-brand/10 hover:bg-brand/20 rounded-lg px-3 py-2 transition-colors">Ver catálogo →</a>
+            <p class="text-xs text-brand font-medium leading-relaxed mb-3" data-i18n="concepto.sidebar.cta.heading">¿Listo para ver las herramientas?</p>
+            <a href="agentes-cli.html" class="block text-center text-xs font-semibold text-brand bg-brand/10 hover:bg-brand/20 rounded-lg px-3 py-2 transition-colors" data-i18n="concepto.sidebar.cta.button">Ver catálogo →</a>
           </div>
         </div>
       </aside>
@@ -189,19 +199,19 @@
         <section id="frustracion" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">1</span>
-            <h2 class="article-h2 !mt-0 !mb-0">La frustración de explicar código a una máquina</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s1.heading">La frustración de explicar código a una máquina</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s1.p1">
             Todos hemos pasado por esto: buscas una solución en Stack Overflow, la encuentras en JavaScript, pero tu proyecto usa Rust. La copias, la adaptas, ajustas los tipos, buscas documentación de la librería, y después de veinte minutos tienes algo que funciona — o casi funciona.
           </p>
-          <p class="article-p">
+          <p class="article-p" data-i18n-html="concepto.s1.p2">
             Un buscador no entiende tu contexto. Un tutorial asume que tu estructura de carpetas es igual a la del ejemplo. Un colega freelance que contrataste necesita una semana para entender tu arquitectura antes de contribuir algo útil. El problema no es la falta de información: es que toda esa información no está conectada a <em>tu</em> proyecto.
           </p>
           <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 flex gap-4">
             <div class="text-amber-500 shrink-0 mt-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
             </div>
-            <p class="text-sm text-amber-800 leading-relaxed">
+            <p class="text-sm text-amber-800 leading-relaxed" data-i18n="concepto.s1.callout">
               El problema de la programación asistida no es la capacidad del modelo, sino la falta de contexto. Las herramientas que no leen tu código solo pueden darte respuestas genéricas.
             </p>
           </div>
@@ -211,12 +221,12 @@
         <section id="entrada" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">2</span>
-            <h2 class="article-h2 !mt-0 !mb-0">Entrada de los agentes CLI</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s2.heading">Entrada de los agentes CLI</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s2.p1">
             Un agente de código CLI es un programa que corre en tu terminal y usa inteligencia artificial para leer, entender y escribir código específico a tu proyecto. No es un chatbot que escribe ejemplos genéricos. Lee tu repositorio, interpreta tus convenciones, busca en tus archivos, y entiende relaciones entre módulos.
           </p>
-          <p class="article-p">Escribes un comando como:</p>
+          <p class="article-p" data-i18n="concepto.s2.p2">Escribes un comando como:</p>
           <div class="my-6 bg-ink rounded-xl overflow-hidden shadow-elev-2">
             <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10">
               <div class="w-3 h-3 rounded-full bg-red-400/70"></div>
@@ -228,15 +238,15 @@
           </div>
           <p class="article-p">Y el agente:</p>
           <ul class="space-y-2 mb-6">
-            <li class="article-li">Navega tu repositorio completo</li>
-            <li class="article-li">Encuentra el módulo <code class="article-code">AuthModule</code></li>
-            <li class="article-li">Lee su código actual y sus dependencias</li>
-            <li class="article-li">Entiende la estructura y el estilo del proyecto</li>
-            <li class="article-li">Propone dónde y cómo añadir validación</li>
-            <li class="article-li">Te muestra el diff antes de aplicar</li>
-            <li class="article-li">Aplica el cambio (opcionalmente) con tu aprobación</li>
+            <li class="article-li" data-i18n="concepto.s2.list1">Navega tu repositorio completo</li>
+            <li class="article-li" data-i18n-html="concepto.s2.list2">Encuentra el módulo <code class="article-code">AuthModule</code></li>
+            <li class="article-li" data-i18n="concepto.s2.list3">Lee su código actual y sus dependencias</li>
+            <li class="article-li" data-i18n="concepto.s2.list4">Entiende la estructura y el estilo del proyecto</li>
+            <li class="article-li" data-i18n="concepto.s2.list5">Propone dónde y cómo añadir validación</li>
+            <li class="article-li" data-i18n="concepto.s2.list6">Te muestra el diff antes de aplicar</li>
+            <li class="article-li" data-i18n="concepto.s2.list7">Aplica el cambio (opcionalmente) con tu aprobación</li>
           </ul>
-          <p class="article-p">
+          <p class="article-p" data-i18n-html="concepto.s2.closing">
             La diferencia fundamental: el agente está anclado en la realidad de <em>tu</em> código, no en ejemplos de internet.
           </p>
         </section>
@@ -245,9 +255,9 @@
         <section id="funcionamiento" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">3</span>
-            <h2 class="article-h2 !mt-0 !mb-0">Cómo funciona bajo el capó</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s3.heading">Cómo funciona bajo el capó</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s3.intro">
             Un agente CLI no es solo una API de chat con una interfaz de terminal. Por detrás hay un sistema que coordina múltiples capacidades para entender y modificar código de forma precisa.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 my-6">
@@ -255,29 +265,29 @@
               <div class="w-9 h-9 rounded-xl bg-brand-soft flex items-center justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
               </div>
-              <h3 class="font-semibold text-ink text-sm mb-1.5">Lectura del repositorio</h3>
-              <p class="text-xs text-muted leading-relaxed">Lee archivos respetando <code class="article-code">.gitignore</code> y mantiene un modelo mental de la estructura del código.</p>
+              <h3 class="font-semibold text-ink text-sm mb-1.5" data-i18n="concepto.s3.card1.heading">Lectura del repositorio</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n-html="concepto.s3.card1.desc">Lee archivos respetando <code class="article-code">.gitignore</code> y mantiene un modelo mental de la estructura del código.</p>
             </div>
             <div class="bg-surface border border-line rounded-xl p-5">
               <div class="w-9 h-9 rounded-xl bg-[#052014] flex items-center justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
               </div>
-              <h3 class="font-semibold text-ink text-sm mb-1.5">Grafo de dependencias</h3>
-              <p class="text-xs text-muted leading-relaxed">Entiende cómo los módulos se importan entre sí y qué impacto tendría un cambio en una función concreta.</p>
+              <h3 class="font-semibold text-ink text-sm mb-1.5" data-i18n="concepto.s3.card2.heading">Grafo de dependencias</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s3.card2.desc">Entiende cómo los módulos se importan entre sí y qué impacto tendría un cambio en una función concreta.</p>
             </div>
             <div class="bg-surface border border-line rounded-xl p-5">
               <div class="w-9 h-9 rounded-xl bg-[#1C1400] flex items-center justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#FBBF24]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
               </div>
-              <h3 class="font-semibold text-ink text-sm mb-1.5">Lectura de errores</h3>
-              <p class="text-xs text-muted leading-relaxed">Lee mensajes del compilador, fallos de tests y stack traces, y los conecta con el código fuente correspondiente.</p>
+              <h3 class="font-semibold text-ink text-sm mb-1.5" data-i18n="concepto.s3.card3.heading">Lectura de errores</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s3.card3.desc">Lee mensajes del compilador, fallos de tests y stack traces, y los conecta con el código fuente correspondiente.</p>
             </div>
             <div class="bg-surface border border-line rounded-xl p-5">
               <div class="w-9 h-9 rounded-xl bg-[#0A1628] flex items-center justify-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#60A5FA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
               </div>
-              <h3 class="font-semibold text-ink text-sm mb-1.5">Generación con tu estilo</h3>
-              <p class="text-xs text-muted leading-relaxed">Genera código que respeta tus convenciones de nombres, indentación y arquitectura, no un template genérico.</p>
+              <h3 class="font-semibold text-ink text-sm mb-1.5" data-i18n="concepto.s3.card4.heading">Generación con tu estilo</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s3.card4.desc">Genera código que respeta tus convenciones de nombres, indentación y arquitectura, no un template genérico.</p>
             </div>
           </div>
         </section>
@@ -286,9 +296,9 @@
         <section id="diferencia" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">4</span>
-            <h2 class="article-h2 !mt-0 !mb-0">Por qué un agente CLI es diferente de un chatbot</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s4.heading">Por qué un agente CLI es diferente de un chatbot</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s4.intro">
             La confusión más común es tratar un agente CLI como un chatbot más sofisticado. No lo es. Son herramientas con propósitos, arquitecturas y casos de uso fundamentalmente distintos.
           </p>
           <div class="flex flex-col md:flex-row gap-0 rounded-2xl overflow-hidden border border-line shadow-elev-1 my-6">
@@ -298,16 +308,16 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-3 3v-3z"/></svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-ink text-sm">Chatbot tradicional</h3>
-                  <p class="text-xs text-muted">ej. ChatGPT sin plugins</p>
+                  <h3 class="font-semibold text-ink text-sm" data-i18n="concepto.s4.chatbot.heading">Chatbot tradicional</h3>
+                  <p class="text-xs text-muted" data-i18n="concepto.s4.chatbot.subtitle">ej. ChatGPT sin plugins</p>
                 </div>
               </div>
               <ul class="space-y-3">
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span>Contesta preguntas generales</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span>No tiene acceso a tu código fuente</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span>No sabe dónde colocar el código</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span>Escribe ejemplos genéricos: tú los integras</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span>Cada pregunta empieza desde cero</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span><span data-i18n="concepto.s4.chatbot.li1">Contesta preguntas generales</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span><span data-i18n="concepto.s4.chatbot.li2">No tiene acceso a tu código fuente</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span><span data-i18n="concepto.s4.chatbot.li3">No sabe dónde colocar el código</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span><span data-i18n="concepto.s4.chatbot.li4">Escribe ejemplos genéricos: tú los integras</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-red-400 shrink-0 mt-0.5 font-bold">✗</span><span data-i18n="concepto.s4.chatbot.li5">Cada pregunta empieza desde cero</span></li>
               </ul>
             </div>
             <div class="flex-1 compare-col-right bg-[#052014] p-6">
@@ -316,20 +326,20 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-ink text-sm">Agente CLI</h3>
-                  <p class="text-xs text-muted">ej. Claude Code, Aider</p>
+                  <h3 class="font-semibold text-ink text-sm" data-i18n="concepto.s4.cli.heading">Agente CLI</h3>
+                  <p class="text-xs text-muted" data-i18n="concepto.s4.cli.subtitle">ej. Claude Code, Aider</p>
                 </div>
               </div>
               <ul class="space-y-3">
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span>Lee tu proyecto completo en tiempo real</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span>Entiende tu arquitectura y convenciones</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span>Sabe exactamente dónde colocar el código</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span>Edita archivos directamente</li>
-                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span>Recuerda el contexto y prueba cambios</li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span><span data-i18n="concepto.s4.cli.li1">Lee tu proyecto completo en tiempo real</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span><span data-i18n="concepto.s4.cli.li2">Entiende tu arquitectura y convenciones</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span><span data-i18n="concepto.s4.cli.li3">Sabe exactamente dónde colocar el código</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span><span data-i18n="concepto.s4.cli.li4">Edita archivos directamente</span></li>
+                <li class="flex items-start gap-2.5 text-sm text-ink/80"><span class="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span><span data-i18n="concepto.s4.cli.li5">Recuerda el contexto y prueba cambios</span></li>
               </ul>
             </div>
           </div>
-          <p class="text-center text-muted text-sm italic">
+          <p class="text-center text-muted text-sm italic" data-i18n-html="concepto.s4.quote">
             Un chatbot es un asistente consultivo. Un agente CLI es un desarrollador junior que <em>ya conoce tu código</em>.
           </p>
         </section>
@@ -338,59 +348,59 @@
         <section id="casos" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">5</span>
-            <h2 class="article-h2 !mt-0 !mb-0">Los casos de uso que funcionan hoy</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s5.heading">Los casos de uso que funcionan hoy</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s5.intro">
             Estos patrones de uso están validados en producción. Funcionan porque tienen reglas claras y verificabilidad: los tests pasan o no, el código compila o no, el lint falla o no.
           </p>
           <div class="grid sm:grid-cols-2 gap-3 my-6">
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
               <div class="w-1 min-h-[3rem] rounded-full bg-brand shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Refactoring</h3>
-                <p class="text-xs text-muted leading-relaxed">«Migra este módulo de CommonJS a ES modules.» El agente entiende las dependencias y cambia todas las importaciones a la vez.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card1.heading">Refactoring</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s5.card1.desc">«Migra este módulo de CommonJS a ES modules.» El agente entiende las dependencias y cambia todas las importaciones a la vez.</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
               <div class="w-1 min-h-[3rem] rounded-full bg-[#047857] shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Bugfixes</h3>
-                <p class="text-xs text-muted leading-relaxed">«El test <code class="article-code">auth.spec.ts</code> falla. Diagnostica y arregla.» El agente lee el error y busca la causa raíz.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card2.heading">Bugfixes</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n-html="concepto.s5.card2.desc">«El test <code class="article-code">auth.spec.ts</code> falla. Diagnostica y arregla.» El agente lee el error y busca la causa raíz.</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
               <div class="w-1 min-h-[3rem] rounded-full bg-[#2563EB] shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Feature development</h3>
-                <p class="text-xs text-muted leading-relaxed">«Añade un endpoint POST <code class="article-code">/api/users</code> que valide email.» El agente crea el handler, validación y tests.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card3.heading">Feature development</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n-html="concepto.s5.card3.desc">«Añade un endpoint POST <code class="article-code">/api/users</code> que valide email.» El agente crea el handler, validación y tests.</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
               <div class="w-1 min-h-[3rem] rounded-full bg-[#B45309] shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Testing</h3>
-                <p class="text-xs text-muted leading-relaxed">«Escribe tests unitarios para esta función.» El agente crea casos de prueba basados en el código real y sus casos límite.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card4.heading">Testing</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s5.card4.desc">«Escribe tests unitarios para esta función.» El agente crea casos de prueba basados en el código real y sus casos límite.</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
               <div class="w-1 min-h-[3rem] rounded-full bg-[#0F766E] shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Documentación</h3>
-                <p class="text-xs text-muted leading-relaxed">«Regenera el README basándote en el código actual.» El agente inspecciona el repo y produce documentación actualizada.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card5.heading">Documentación</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s5.card5.desc">«Regenera el README basándote en el código actual.» El agente inspecciona el repo y produce documentación actualizada.</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all">
               <div class="w-1 min-h-[3rem] rounded-full bg-[#BE123C] shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Migraciones</h3>
-                <p class="text-xs text-muted leading-relaxed">«Actualiza todas las importaciones de React 17 a React 18.» El agente actualiza sistemáticamente cada archivo afectado.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card6.heading">Migraciones</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s5.card6.desc">«Actualiza todas las importaciones de React 17 a React 18.» El agente actualiza sistemáticamente cada archivo afectado.</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 bg-surface border border-line rounded-xl hover:border-brand/30 hover:shadow-elev-1 transition-all sm:col-span-2">
               <div class="w-1 min-h-[3rem] rounded-full bg-[#2563EB] shrink-0 mt-0.5"></div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Security scanning</h3>
-                <p class="text-xs text-muted leading-relaxed">«Busca hardcoded secrets o vulnerabilidades comunes.» El agente recorre el código buscando patrones inseguros conocidos en toda la base de código.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s5.card7.heading">Security scanning</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s5.card7.desc">«Busca hardcoded secrets o vulnerabilidades comunes.» El agente recorre el código buscando patrones inseguros conocidos en toda la base de código.</p>
               </div>
             </div>
           </div>
@@ -400,9 +410,9 @@
         <section id="limitaciones" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">6</span>
-            <h2 class="article-h2 !mt-0 !mb-0">Las limitaciones reales (qué no hace)</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s6.heading">Las limitaciones reales (qué no hace)</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s6.intro">
             No es magia. Entender los límites de los agentes CLI es tan importante como entender sus capacidades. Estas son las fronteras reales, documentadas por practitioners en producción:
           </p>
           <div class="space-y-3 my-6">
@@ -411,8 +421,8 @@
                 <span class="text-[#F87171] font-bold text-sm">!</span>
               </div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">No inventa requisitos ambiguos</h3>
-                <p class="text-xs text-muted leading-relaxed">Si le pides algo vago, pregunta. Esto es una ventaja: el agente te obliga a ser preciso en lo que necesitas antes de escribir una sola línea.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s6.lim1.heading">No inventa requisitos ambiguos</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s6.lim1.desc">Si le pides algo vago, pregunta. Esto es una ventaja: el agente te obliga a ser preciso en lo que necesitas antes de escribir una sola línea.</p>
               </div>
             </div>
             <div class="flex items-start gap-4 p-4 bg-surface border border-line rounded-xl">
@@ -420,8 +430,8 @@
                 <span class="text-[#F87171] font-bold text-sm">!</span>
               </div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">No entiende hardware sin contexto explícito</h3>
-                <p class="text-xs text-muted leading-relaxed">No puede optimizar para una arquitectura ARM, una FPGA o restricciones de memoria embebida sin que se lo expliques. El contexto físico es tuyo.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s6.lim2.heading">No entiende hardware sin contexto explícito</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s6.lim2.desc">No puede optimizar para una arquitectura ARM, una FPGA o restricciones de memoria embebida sin que se lo expliques. El contexto físico es tuyo.</p>
               </div>
             </div>
             <div class="flex items-start gap-4 p-4 bg-surface border border-line rounded-xl">
@@ -429,8 +439,8 @@
                 <span class="text-[#F87171] font-bold text-sm">!</span>
               </div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">No reemplaza a un arquitecto sénior</h3>
-                <p class="text-xs text-muted leading-relaxed">Puede ayudarte a implementar una decisión arquitectónica, pero no debería tomarla por ti. Las decisiones de diseño siguen siendo responsabilidad humana.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s6.lim3.heading">No reemplaza a un arquitecto sénior</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s6.lim3.desc">Puede ayudarte a implementar una decisión arquitectónica, pero no debería tomarla por ti. Las decisiones de diseño siguen siendo responsabilidad humana.</p>
               </div>
             </div>
             <div class="flex items-start gap-4 p-4 bg-surface border border-line rounded-xl">
@@ -438,8 +448,8 @@
                 <span class="text-[#F87171] font-bold text-sm">!</span>
               </div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Límite de ventana de contexto</h3>
-                <p class="text-xs text-muted leading-relaxed">Hay un límite en cuánto código puede entender en una sola sesión. En repositorios muy grandes, el agente trabaja con porciones relevantes, no el repo completo.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s6.lim4.heading">Límite de ventana de contexto</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s6.lim4.desc">Hay un límite en cuánto código puede entender en una sola sesión. En repositorios muy grandes, el agente trabaja con porciones relevantes, no el repo completo.</p>
               </div>
             </div>
             <div class="flex items-start gap-4 p-4 bg-surface border border-line rounded-xl">
@@ -447,8 +457,8 @@
                 <span class="text-[#F87171] font-bold text-sm">!</span>
               </div>
               <div>
-                <h3 class="font-semibold text-sm text-ink mb-1">Los cambios necesitan revisión humana</h3>
-                <p class="text-xs text-muted leading-relaxed">Un agente propone; un humano aprueba. Nunca despliegues código generado por un agente sin haberlo revisado, especialmente en sistemas de producción.</p>
+                <h3 class="font-semibold text-sm text-ink mb-1" data-i18n="concepto.s6.lim5.heading">Los cambios necesitan revisión humana</h3>
+                <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s6.lim5.desc">Un agente propone; un humano aprueba. Nunca despliegues código generado por un agente sin haberlo revisado, especialmente en sistemas de producción.</p>
               </div>
             </div>
           </div>
@@ -458,45 +468,45 @@
         <section id="como-elegir" class="mb-12">
           <div class="flex items-center gap-3 mb-5">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold shrink-0">7</span>
-            <h2 class="article-h2 !mt-0 !mb-0">Cómo elegir uno para tu equipo</h2>
+            <h2 class="article-h2 !mt-0 !mb-0" data-i18n="concepto.s7.heading">Cómo elegir uno para tu equipo</h2>
           </div>
-          <p class="article-p">
+          <p class="article-p" data-i18n="concepto.s7.intro">
             No existe una herramienta universal. Cuatro preguntas te ayudan a descartar opciones y llegar a las que realmente encajan con tu contexto.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 my-6">
             <div class="bg-surface border-2 border-brand-soft rounded-xl p-5">
-              <div class="text-xs font-bold text-brand uppercase tracking-wider mb-2">Pregunta 1</div>
-              <h3 class="font-semibold text-ink text-sm mb-2">¿Cuál es tu lenguaje primario?</h3>
-              <p class="text-xs text-muted leading-relaxed">Algunos agentes son mejores con Python, otros con JavaScript/TypeScript, otros agnósticos. Elige uno que domine tu stack. Si trabajas en un monorepo multilenguaje, prioriza herramientas agnósticas de modelo.</p>
+              <div class="text-xs font-bold text-brand uppercase tracking-wider mb-2" data-i18n="concepto.s7.q1.label">Pregunta 1</div>
+              <h3 class="font-semibold text-ink text-sm mb-2" data-i18n="concepto.s7.q1.heading">¿Cuál es tu lenguaje primario?</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s7.q1.desc">Algunos agentes son mejores con Python, otros con JavaScript/TypeScript, otros agnósticos. Elige uno que domine tu stack. Si trabajas en un monorepo multilenguaje, prioriza herramientas agnósticas de modelo.</p>
             </div>
             <div class="bg-surface border-2 border-[#10B981] rounded-xl p-5">
-              <div class="text-xs font-bold text-[#10B981] uppercase tracking-wider mb-2">Pregunta 2</div>
-              <h3 class="font-semibold text-ink text-sm mb-2">¿Privacidad o velocidad?</h3>
-              <p class="text-xs text-muted leading-relaxed">¿Necesitas que el código nunca salga de tu infraestructura? Herramientas con Ollama permiten modelos locales. ¿O prefieres velocidad y calidad máxima? Entonces una API en la nube (Anthropic, OpenAI, Google).</p>
+              <div class="text-xs font-bold text-[#10B981] uppercase tracking-wider mb-2" data-i18n="concepto.s7.q2.label">Pregunta 2</div>
+              <h3 class="font-semibold text-ink text-sm mb-2" data-i18n="concepto.s7.q2.heading">¿Privacidad o velocidad?</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s7.q2.desc">¿Necesitas que el código nunca salga de tu infraestructura? Herramientas con Ollama permiten modelos locales. ¿O prefieres velocidad y calidad máxima? Entonces una API en la nube (Anthropic, OpenAI, Google).</p>
             </div>
             <div class="bg-surface border-2 border-[#60A5FA] rounded-xl p-5">
-              <div class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider mb-2">Pregunta 3</div>
-              <h3 class="font-semibold text-ink text-sm mb-2">¿Un agente solo o orquestación?</h3>
-              <p class="text-xs text-muted leading-relaxed">¿Necesitas un agente para tareas simples en tu flujo individual? Un CLI agent. ¿O necesitas coordinar varios agentes especializados en paralelo en el mismo proyecto? Un orquestador.</p>
+              <div class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider mb-2" data-i18n="concepto.s7.q3.label">Pregunta 3</div>
+              <h3 class="font-semibold text-ink text-sm mb-2" data-i18n="concepto.s7.q3.heading">¿Un agente solo o orquestación?</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s7.q3.desc">¿Necesitas un agente para tareas simples en tu flujo individual? Un CLI agent. ¿O necesitas coordinar varios agentes especializados en paralelo en el mismo proyecto? Un orquestador.</p>
             </div>
             <div class="bg-surface border-2 border-[#FEF3C7] rounded-xl p-5">
-              <div class="text-xs font-bold text-[#FBBF24] uppercase tracking-wider mb-2">Pregunta 4</div>
-              <h3 class="font-semibold text-ink text-sm mb-2">¿Presupuesto?</h3>
-              <p class="text-xs text-muted leading-relaxed">Algunos son gratuitos (Gemini CLI con 1.000 req/día, Aider con Ollama). Otros cobran por suscripción o por token de API. El costo por token importa mucho cuando trabajas con repositorios grandes.</p>
+              <div class="text-xs font-bold text-[#FBBF24] uppercase tracking-wider mb-2" data-i18n="concepto.s7.q4.label">Pregunta 4</div>
+              <h3 class="font-semibold text-ink text-sm mb-2" data-i18n="concepto.s7.q4.heading">¿Presupuesto?</h3>
+              <p class="text-xs text-muted leading-relaxed" data-i18n="concepto.s7.q4.desc">Algunos son gratuitos (Gemini CLI con 1.000 req/día, Aider con Ollama). Otros cobran por suscripción o por token de API. El costo por token importa mucho cuando trabajas con repositorios grandes.</p>
             </div>
           </div>
         </section>
 
         <!-- CTA -->
         <div class="rounded-2xl bg-grad-hero border border-brand/20 p-8 text-center reveal-target">
-          <h2 class="font-display text-2xl font-bold text-ink mb-3">¿Listo para explorar las herramientas?</h2>
-          <p class="text-muted leading-relaxed mb-6 max-w-md mx-auto">Con los conceptos claros, es el momento de ver qué herramientas existen y cuál encaja mejor en tu flujo de trabajo.</p>
+          <h2 class="font-display text-2xl font-bold text-ink mb-3" data-i18n="concepto.cta.heading">¿Listo para explorar las herramientas?</h2>
+          <p class="text-muted leading-relaxed mb-6 max-w-md mx-auto" data-i18n="concepto.cta.body">Con los conceptos claros, es el momento de ver qué herramientas existen y cuál encaja mejor en tu flujo de trabajo.</p>
           <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="agentes-cli.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand text-white text-sm font-semibold hover:bg-brand/90 shadow-elev-2 transition-all">
-              Ver agentes CLI
+              <span data-i18n="concepto.cta.btnCli">Ver agentes CLI</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
-            <a href="casos-uso.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-line bg-surface text-ink text-sm font-semibold hover:bg-line transition-all">
+            <a href="casos-uso.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-line bg-surface text-ink text-sm font-semibold hover:bg-line transition-all" data-i18n="concepto.cta.btnCasos">
               Ver casos de uso
             </a>
           </div>
@@ -512,27 +522,31 @@
   <div class="max-w-content mx-auto px-4 sm:px-6 py-12">
     <div class="flex flex-col md:flex-row items-start justify-between gap-10">
       <div>
-        <div class="font-display text-xl font-bold text-brand mb-2">Guía de Agentes IA</div>
-        <p class="text-sm text-muted max-w-xs leading-relaxed">Una guía abierta para desarrolladores que quieren entender los agentes de código CLI y orquestadores.</p>
-        <p class="text-xs text-muted mt-4">Datos a fecha de junio de 2026</p>
+        <div class="font-display text-xl font-bold text-brand mb-2" data-i18n="footer.title">Guía de Agentes IA</div>
+        <p class="text-sm text-muted max-w-xs leading-relaxed" data-i18n="footer.tagline">Una guía abierta para desarrolladores que quieren entender los agentes de código CLI y orquestadores.</p>
+        <p class="text-xs text-muted mt-4" data-i18n="footer.fecha">Datos a fecha de junio de 2026</p>
       </div>
-      <nav class="grid grid-cols-2 gap-x-16 gap-y-2 text-sm" aria-label="Mapa del sitio">
-        <a href="index.html" class="text-muted hover:text-ink transition-colors">Inicio</a>
-        <a href="agentes-cli.html" class="text-muted hover:text-ink transition-colors">Agentes CLI</a>
-        <a href="orquestadores.html" class="text-muted hover:text-ink transition-colors">Orquestadores</a>
-        <a href="comparativa.html" class="text-muted hover:text-ink transition-colors">Comparativa</a>
-        <a href="casos-uso.html" class="text-muted hover:text-ink transition-colors">Casos de uso</a>
-        <a href="ruta-aprendizaje.html" class="text-muted hover:text-ink transition-colors">Ruta de aprendizaje</a>
-        <a href="concepto.html" class="text-muted hover:text-ink transition-colors">Conceptos</a>
-        <a href="glosario-faq.html" class="text-muted hover:text-ink transition-colors">Glosario y FAQ</a>
-        <a href="acerca.html" class="text-muted hover:text-ink transition-colors">Acerca</a>
+      <nav class="grid grid-cols-2 gap-x-16 gap-y-2 text-sm" aria-label="Mapa del sitio" data-i18n-attr="aria-label:footer.sitemapLabel">
+        <a href="index.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.inicio">Inicio</a>
+        <a href="agentes-cli.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.agentesCli">Agentes CLI</a>
+        <a href="orquestadores.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.orquestadores">Orquestadores</a>
+        <a href="comparativa.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.comparativa">Comparativa</a>
+        <a href="casos-uso.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.casosUso">Casos de uso</a>
+        <a href="ruta-aprendizaje.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.ruta">Ruta de aprendizaje</a>
+        <a href="concepto.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.conceptos">Conceptos</a>
+        <a href="glosario-faq.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.glosarioFaq">Glosario y FAQ</a>
+        <a href="acerca.html" class="text-muted hover:text-ink transition-colors" data-i18n="nav.acerca">Acerca</a>
       </nav>
     </div>
   </div>
 </footer>
 
 <script src="assets/data.js"></script>
+<script src="assets/data.en.js"></script>
 <script src="assets/data-v3-research.js"></script>
+<script src="assets/data-v3-research.en.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/i18n.en.js"></script>
 <script src="assets/app.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {

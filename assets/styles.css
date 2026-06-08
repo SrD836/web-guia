@@ -152,6 +152,15 @@ body.modal-open { overflow: hidden; }
 .faq-chevron { transition: transform 0.28s cubic-bezier(0.22,0.61,0.36,1); }
 .faq-chevron.open { transform: rotate(180deg); }
 
+/* ─── Lang toggle ─────────────────────────── */
+.lang-toggle [data-lang][aria-pressed="true"] {
+  background-color: #F97316;
+  color: #fff;
+}
+.lang-toggle [data-lang][aria-pressed="false"] {
+  color: #94A3B8;
+}
+
 /* ─── Learning path rail ──────────────────── */
 .step-rail { position: relative; padding-bottom: 2rem; }
 .step-rail::before {
